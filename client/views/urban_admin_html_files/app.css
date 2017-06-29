@@ -26370,7 +26370,7 @@ td.align-middle {
 .layout-small-menu .user-info{display:none;}
 .layout-small-menu .sidebar-panel.offscreen-left .green_overlay{display:none;}
 .main_section{padding:55px 15px 0px 0px;display:inline-block;width:100%; }
-.main_section_row{-webkit-border-radius: 3px;-moz-border-radius: 3px;-ms-border-radius: 3px;border-radius: 3px;box-shadow: 1px 5px 20px rgba(0,0,0,0.09);height:700px;float:left;width:100%;background:#FFF;position:relative; z-index:1;}
+.main_section_row{-webkit-border-radius: 3px;-moz-border-radius: 3px;-ms-border-radius: 3px;border-radius: 3px;box-shadow: 1px 5px 20px rgba(0,0,0,0.09);height:990px;float:left;width:100%;background:#FFF;position:relative; z-index:1;}
 .morphsearch-input {margin: 5px 0px;padding: 7px 0;color: #fff;border-bottom: 1px solid rgba(255,255,255,0.3) !important;background: none;border: 0px;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: currentcolor;width: 100%;float: left;color: #FFF;}
 input::placeholder{color:#FFF;}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
