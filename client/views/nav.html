@@ -42,13 +42,13 @@
         <div class="sidebar-panel offscreen-left">
 			<div class="green_overlay"></div>
             <div class="brand">
-               <div class="brand-logo"> Swift Hospital </div>
+               <div class="brand-logo" style="text-align:center"> Tatlu </div>
                <a href="javascript:;" class="toggle-sidebar hidden-xs hamburger-icon v3" data-toggle="layout-small-menu"> <span></span> <span></span> <span></span> <span></span> </a>
             </div>
 			<div class="user-info">
-				<div class="admin-image"> <img src="views/urban_admin_html_files/face4.jpg" alt=""> </div>
+				<div class="admin-image"> <img src="{{dp}}" alt=""> </div>
 				<div class="admin-action-info"> <span>Welcome</span>
-					<h3>Dr. John</h3>
+					<h3>{{name}}</h3>
 					<ul>
 						<li><a data-placement="bottom" title="Go to Inbox" href="mail-inbox.html"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 						<li><a data-placement="bottom" title="Go to Profile" href="profile.html"><i class="fa fa-user" aria-hidden="true"></i></a></li>
@@ -67,7 +67,7 @@
 			</div>
             <nav role="navigation" class="ps-container ps-active-y">
                <ul class="nav">
-<!-- 
+<!--
                  <li ng-repeat="m in menuList"  ng-click="showChilds(m)" >
                  							<a class="active" href={{m.href}}>	<i  class={{m.icon}}></i><span>{{m.menuName}}</span></a>
 
@@ -219,11 +219,13 @@
                   </li>
                </ul>
                <ul class="nav navbar-nav navbar-right hidden-xs">
-                  <!--<li> <a href="javascript:;" data-toggle="quick-launch-panel"> <i class="fa fa-circle-thin"></i> </a> </li>-->
+<li><a href="#/sign-in"><i class="fa-sign-in">Login</i></a></li>
+
+                  <!-- <li> <a href="javascript:;" data-toggle="quick-launch-panel"> <i class="fa fa-circle-thin"></i> </a> </li> -->
                   <li>
                      <a href="javascript:;" data-toggle="dropdown">
-                        <i class="fa fa-bell-o"></i>
-                        <div class="status bg-danger border-danger animated bounce"></div>
+                        <!-- <i class="fa fa-bell-o"></i> -->
+                        <!-- <div class="status bg-danger border-danger animated bounce"></div> -->
                      </a>
                      <ul class="dropdown-menu notifications">
                         <li class="notifications-header">
@@ -257,7 +259,7 @@
                      </ul>
                   </li>
                   <li>
-                     <a href="javascript:;" data-toggle="dropdown"> <img src="views/urban_admin_html_files/avatar.jpg" class="header-avatar img-circle ml10" alt="user" title="user"> <span class="pull-left">Samuel Perkins</span> </a>
+                     <a href="javascript:;" data-toggle="dropdown"> <img src="{{dp}}" class="header-avatar img-circle ml10" > <span class="pull-left">{{name}}</span> </a>
                      <ul class="dropdown-menu">
                         <li> <a href="javascript:;">Settings</a> </li>
                         <li> <a href="javascript:;">Upgrade</a> </li>
@@ -269,11 +271,11 @@
                   <li> <a href="javascript:;" class="hamburger-icon v2" data-toggle="layout-chat-open"> <span></span> <span></span> <span></span> </a> </li>
                </ul>
             </header>
-			<!-- <article class="main_section">
+			<article class="main_section">
 				<div class="main_section_row">
-          <div ></div>
+<!-- hiiiiii -->
 				</div>
-			 </article> -->
+			 </article>
          </div>
 		 <!--<article class="main_section">
 			<div class="main_section_row">
