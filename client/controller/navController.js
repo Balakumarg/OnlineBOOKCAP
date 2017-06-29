@@ -12,19 +12,21 @@ if (authUser != undefined) {
   $scope.loggedIn=authUser.currentUser.isLoggedIn;
       loggedInUser = authUser.currentUser.userInfo;
       console.log(loggedInUser);
+      $scope.dp="uploads"+"/"+loggedInUser.dp;
+
       // $scope.pic=loggedInUser.dp;
       $scope.name=loggedInUser.fname;
       $http.get('/api/getuser').success(function (response) {
 
 for(var m=0;m<response.length;m++){
   if(response[m].id==loggedInUser.Id){
-$scope.dp="uploads"+"/"+response[m].profileImage;
+// $scope.dp="uploads"+"/"+response[m].profileImage;
   }
 }
       });
 
 $scope.type=loggedInUser.usertype;
-      console.log($scope.dp);
+      // console.log($scope.dp);
       console.log($scope.name);
     }
 
