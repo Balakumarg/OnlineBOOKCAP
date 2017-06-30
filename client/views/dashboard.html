@@ -6,7 +6,7 @@
 }
 .info-box-4 .content .number {
     font-weight: normal;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 0px;
     color: #FFF;
 }
@@ -32,10 +32,10 @@
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <md-content layout-padding>
       <div class="info-box-4 hover-zoom-effect" style="background-color:#03A9F4">
-          <div class="icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-user" style="color:#FFF;"></i> </div>
+
           <div class="content">
-              <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Patients</div>
-              <div class="number">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{patientList.length}}</div>
+              <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-user" style="color:#FFF;"></i>&nbsp; Patients </div>
+              <div class="number">&nbsp;&nbsp;&nbsp;Total No of Patients : {{patientList.length}}</div>
           </div>
       </div>
         </md-content>
@@ -43,33 +43,33 @@
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
       <md-content layout-padding>
     <div class="info-box-4 hover-zoom-effect" style="background-color:#f39c12">
-        <div class="icon"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-user" style="color:#FFF;"></i> </div>
         <div class="content">
-            <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Doctors</div>
-            <div class="number">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{doctorlist.length}}</div>
+            <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-user" style="color:#FFF;"></i>&nbsp; Doctors </div>
+            <div class="number">&nbsp;&nbsp;&nbsp;Total No of Doctors : {{doctorlist.length}}</div>
         </div>
+
     </div>
       </md-content>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
       <md-content layout-padding>
     <div class="info-box-4 hover-zoom-effect" style="background-color:#8e44ad">
-        <div class="icon"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-user" style="color:#FFF;"></i> </div>
         <div class="content">
-            <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Nurses</div>
-            <div class="number">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{nurselist.length}}</div>
+            <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-user" style="color:#FFF;"></i>&nbsp; Nurses </div>
+            <div class="number">&nbsp;&nbsp;&nbsp;Total No of Nurses : {{nurselist.length}}</div>
         </div>
+
     </div>
       </md-content>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
       <md-content layout-padding>
     <div class="info-box-4 hover-zoom-effect" style="background-color:#c0392b">
-        <div class="icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <i class="fa fa-user" style="color:#FFF;"></i> </div>
         <div class="content">
-            <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Call Center</div>
-            <div class="number">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{callist.length}}</div>
+            <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-user" style="color:#FFF;"></i>&nbsp; Call Centers </div>
+            <div class="number">&nbsp;&nbsp;&nbsp;Total No of CallCenters : {{callist.length}}</div>
         </div>
+
     </div>
       </md-content>
     </div>
@@ -78,22 +78,22 @@
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
       <md-content layout-padding>
     <div class="info-box-4 hover-zoom-effect" style="background-color:#f1c40f">
-        <div class="icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <i class="fa fa-user" style="color:#FFF;"></i> </div>
-        <div class="content">
-            <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Frontdesk</div>
-            <div class="number">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{frontlist.length}}</div>
-        </div>
+      <div class="content">
+          <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-user" style="color:#FFF;"></i>&nbsp; Frontdesk </div>
+          <div class="number">&nbsp;&nbsp;&nbsp;Total No of Frontdesks : {{frontlist.length}}</div>
+      </div>
+
     </div>
       </md-content>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
       <md-content layout-padding>
     <div class="info-box-4 hover-zoom-effect" style="background-color:#2ecc71">
-        <div class="icon"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-user" style="color:#FFF;"></i> </div>
-        <div class="content">
-            <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Faculty Admins</div>
-            <div class="number">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{FacilityList.length}}</div>
-        </div>
+      <div class="content">
+          <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-user" style="color:#FFF;"></i>&nbsp; Faculty Admins </div>
+          <div class="number">&nbsp;&nbsp;&nbsp;Total No of Faculty Admins : {{FacilityList.length}}</div>
+      </div>
+
     </div>
       </md-content>
     </div>
@@ -102,11 +102,10 @@
           <md-content layout-padding>
         <div class="info-box-4 hover-zoom-effect" style="background-color:#009688">
 
-            <div class="icon"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-calendar" style="color:#FFF"></i> </div>
-            <div class="content">
-                <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Appointments</div>
-                <div class="number">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3</div>
-            </div>
+          <div class="content">
+              <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-calendar" style="color:#FFF"></i> &nbsp; Appointments</div>
+              <div class="number">&nbsp;&nbsp;&nbsp;Total No of Appointments : 3</div>
+          </div>
         </div>
           </md-content>
     </div>
