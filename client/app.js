@@ -53,6 +53,9 @@ app.config(function($routeProvider, $locationProvider) {
     }) .when('/nursehome', {
         templateUrl: 'views/nursehome.html',
         controller:'PatientController'
+    }).when('/report', {
+        templateUrl: 'views/reports.html',
+        controller:'reportController'
     }).when('/globals', {
         templateUrl: 'views/globals.html',
         controller: 'globalsController'
@@ -178,7 +181,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
 
     $rootScope.$on('$locationChangeStart', function(event, next, current) {
         var publicPages = ['/', '/sign-in', '/patient','/nav'];
-      var patientPages = ['/','/nursehome','/patient_demographics','/profile','/changepassword','/appointment'];
+      var patientPages = ['/','/report','/nursehome','/patient_demographics','/profile','/changepassword','/appointment'];
   var AdminPages=['/','/nav','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2'];
   var doctorpages = ['/','/nav','/visit','/profile','/changepassword','/patientvisit','/patient','/payment','/medication','/allpatients'];
   var nursepages=['/','/nav','/visit','/nursehome','/patient_demographics','/patient','/patientvisit','/payment','/appointment','/profile','/changepassword'];
