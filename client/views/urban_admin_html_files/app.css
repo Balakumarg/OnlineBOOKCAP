@@ -13133,13 +13133,7 @@ html {
     height: 100%;
     width: 100%
 }
-.app {
-    background:#495469;
-    width: 100%;
-    min-height: 100%;
-    position: relative;
-	float:left;
-}
+.app { background: #495469; width: 100%; min-height: 100%; float: left; position: fixed; z-index: 1; top: 0px; left: 0px; }
 body {
     overflow: visible;
     background: #e0e8f2;
@@ -13551,7 +13545,7 @@ blockquote p {
 }
 .sidebar-panel>nav {
     position: absolute;
-    top: 230px;
+    top: 235px;
     bottom: 0;
     width: 100%;
     overflow-x: hidden;
@@ -13578,7 +13572,7 @@ blockquote p {
     top: auto;
     right: auto
 }
-.sidebar-panel>nav ul>li>a .fa {
+.sidebar-panel>nav ul>li>a .fa, .sidebar-panel>nav ul>li>a .lnr {
     padding-right: 15px;
     width: 30px;
     font-size: 12px;
@@ -13639,7 +13633,8 @@ blockquote p {
 }
 .sidebar-panel>nav>ul>li a {
     position: relative;
-    padding: 13px 25px
+    padding: 13px 25px;
+    color:#FFF;
 }
 .sidebar-panel>nav>ul>li>ul {
     position: relative;
@@ -13655,7 +13650,7 @@ blockquote p {
     clear: both
 }
 .sidebar-panel>nav>ul>li ul {
-    max-height: 0;
+    max-height:auto !important;
     overflow: hidden;
     display: block
 }
@@ -13682,8 +13677,10 @@ blockquote p {
         overflow: visible
     }
     .layout-small-menu .sidebar-panel .brand-logo {
-        display: none;
-        visibility: hidden
+        display: block;
+        visibility: visible;
+        padding:0px;
+        width:100%;
     }
     .layout-small-menu .sidebar-panel .toggle-sidebar {
         text-align: center;
@@ -13717,10 +13714,12 @@ blockquote p {
         top: 5px;
         right: 5px
     }
-    .layout-small-menu .sidebar-panel>nav>ul>li>a>.fa {
+    .layout-small-menu .sidebar-panel>nav>ul>li>a>.fa, .layout-small-menu .sidebar-panel>nav>ul>li>a>.lnr {
         display: block;
         padding: 0;
-        width: 100%
+        width: 100%;
+        font-size:16px;
+        color:#FFF;
     }
     .layout-small-menu .sidebar-panel>nav>ul>li:hover>.sub-menu {
         max-height: 500px
@@ -26370,7 +26369,8 @@ td.align-middle {
 .layout-small-menu .user-info{display:none;}
 .layout-small-menu .sidebar-panel.offscreen-left .green_overlay{display:none;}
 .main_section{padding:55px 15px 0px 0px;display:inline-block;width:100%; }
-.main_section_row{-webkit-border-radius: 3px;-moz-border-radius: 3px;-ms-border-radius: 3px;border-radius: 3px;box-shadow: 1px 5px 20px rgba(0,0,0,0.09);height:990px;float:left;width:100%;background:#FFF;position:relative; z-index:1;}
+.main_section_row{-webkit-border-radius: 3px;-moz-border-radius: 3px;-ms-border-radius: 3px;border-radius: 3px;box-shadow: 1px 5px 20px rgba(0,0,0,0.09);float:left;width:100%;background:none;position:relative; z-index:1;}
+.main_section_row{background:none!important;box-shadow:none !important;}
 .morphsearch-input {margin: 5px 0px;padding: 7px 0;color: #fff;border-bottom: 1px solid rgba(255,255,255,0.3) !important;background: none;border: 0px;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: currentcolor;width: 100%;float: left;color: #FFF;}
 input::placeholder{color:#FFF;}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -26384,4 +26384,61 @@ input::placeholder{color:#FFF;}
 }
 :-moz-placeholder { /* Firefox 18- */
   color: #FFF;
+}
+
+
+
+
+/************ New style on 01-07-2017 *************/
+.header_section{position:relative;margin-left:230px;}
+.fixed_menu_sec{ float: left; width: 77%; position: fixed; right: 20px; top: 0px; z-index:999;}
+.login_btn a, .login_btn i, .account_btn a, .account_btn i, .account_btn span, .notifications_btn i,.notifications_btn a{color: #FFF !important;}
+.navbar-nav.navbar-right a:hover,.navbar-nav.navbar-right a:focus{background:none !important;}
+.dropdown-menu.notifications{min-width:280px;}
+.notifications ul{padding-left:0px;}
+.notifications li{list-style:none; padding:7px 0px;}
+.notifications li a{text-decoration:none;}
+.notifications-list .overflow-hidden{margin:0px;padding-left:15px;}
+.notifications-list li{border-bottom:1px solid #ddd;}
+.notifications-list li:hover{background:#4ac6b8;}
+.notifications-list li:hover a{color:#FFF;}
+.notifications-list li:hover .time{color:#ddd;}
+.notifications .notifications-header h5{margin:0px;text-align: center;text-transform: uppercase;font-size:14px;color:#333;}
+.notifications-list a{padding:0px 15px;display:block;color:#666;font-size:14px;}
+.notifications .notifications-header{border-bottom:1px solid #ddd;}
+.notifications .time{color:#999;}
+.notifications-footer{padding:0px !important;}
+.navigation_head { background: #4a5d6f;margin-bottom:20px;line-height:24px;font-size: 12px;text-transform:uppercase;font-weight: 600; padding: 7px 16px 6px !important; color: #fff;float:left;width:100%;}
+.ps-container.ps-active-y .nav{float:left;}
+.ps-container.ps-active-y .dropdown-menu{box-shadow:none !important;width:100%;color:#FFF;border:0px;background:none;}
+.ps-container.ps-active-y ul li ul li a {padding: 13px 25px 13px 25px;color: #b2b6be;}
+.ps-container.ps-active-y ul li{float:left;width:100%;}
+.ps-container.ps-active-y ul li ul li a:hover{background:#495469;color:#FFF;}
+.main_section_row.ng-scope .layout-padding{border-radius:5px;}
+.main-panel .nav.navbar-right{margin-right:0px !important;}
+.brand { width: 230px; height: 55px; display: block; clear: none; float:left; }
+.header_section .header.navbar{ width: 50%; height: 55px; display: block; clear: none; float:right;margin:0px;}
+.brand .toggle-sidebar span, .hamburger-icon span{background:#FFF;}
+.fcurrent{margin-left:55px !important; width:95% !important;}
+.brand .toggle-sidebar{padding-right:0px !important;}
+.layout-small-menu .brand .toggle-sidebar { position: absolute; left: 100%; width: 50px; height: 55px; background:#495469; top: 0px; content: ""; padding: 20px 18px; }
+.loggedin_section:after { background:url("../../uploads/bg-1.jpg") no-repeat 0px 0px; background-size:cover;width: 100%; position: fixed; height: 100%; content: ""; top: 0px; left: 0px; z-index: -1; }
+.layout-small-menu .brand .toggle-sidebar:after { position: absolute; left:15px; width: 50px; height: 55px; background:#495469; top: 0px; content: ""; transform: skewX(25deg); z-index: -1; }
+.loading_page_section{position:fixed;top:0px;left:0px;content:"";float:left;width:100%;height:100%; background:url("../../images/tatlubg.jpg") no-repeat 0px 0px;}
+.md-select-placeholder, md-input-container label{color:#333 !important; font-weight:normal;}
+button.md-button span {background: #55c9ba;width: auto; padding: 10px 20px; color: #FFF; border-radius: 5px; opacity: 1;box-shadow: 0 2px 3px rgba(0,0,0,.3); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.3); -moz-box-shadow: 0 2px 3px rgba(0,0,0,.3); -webkit-transition: all 0.4s; -o-transition: all 0.4s;}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{color:#333 !important;}
+.nav-tabs>li>a {color: #666;}
+.main_section_row .layout-padding:first-child, .cnt_main_section{min-height:620px;}
+.cnt_main_section .layout-padding{min-height:auto !important;}
+@media screen and (max-width: 767px) {
+.main_section_row.logged_section {position: absolute !important; width: 100% !important; top: 40px; left: 0px; height: 100%;margin:0px !important}
+.app .offscreen-left{position:absolute;left:0px;top:40px;width:100%;height:100%;content:"";z-index:999999;}
+.fixed_menu_sec { float: left; width: 100%; position: fixed; right: 0px; top: 0px; z-index: 999; }
+.header_section .header.navbar { width: 100%; height: 55px; display: block; clear: none; float: right; margin: 0px; }
+.brand { width: 100%; height: 55px; float: left; }
+.header .brand .toggle-offscreen { right: 0; left: auto; }
+.toggle-chat{display:none !important;}
+.brand-logo{float:left !important;}
+.overlay_sec{z-index:-1 !important;}
 }
