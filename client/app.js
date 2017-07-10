@@ -119,6 +119,12 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/sign-in', {
         templateUrl: 'views/sign-in.html',
         controller:'LoginController'
+    }).when('/admin_report1', {
+        templateUrl: 'views/admin_report1.html',
+        controller:'admin_report1Controller'
+    }).when('/admin_report2', {
+        templateUrl: 'views/admin_report2.html',
+        controller:'admin_report2Controller'
     });
   });
 
