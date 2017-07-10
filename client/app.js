@@ -1,4 +1,4 @@
-var app = angular.module('tatluApp', ['ngRoute','ngAnimate', 'ngAria','ngMessages','ngMaterial','ngFlatDatepicker','ngCookies', 'ngStorage']);
+var app = angular.module('tatluApp', ['ngRoute','ngAnimate',"ng-fusioncharts", 'ngAria','ngMessages','ngMaterial','ngFlatDatepicker','ngCookies', 'ngStorage']);
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
@@ -53,9 +53,30 @@ app.config(function($routeProvider, $locationProvider) {
     }) .when('/nursehome', {
         templateUrl: 'views/nursehome.html',
         controller:'PatientController'
+    }) .when('/patienthome', {
+        templateUrl: 'views/patienthome.html',
+        controller:'PatientController'
+    }).when('/visithistory', {
+        templateUrl: 'views/visithistory.html',
+        controller:'VisitController'
     }).when('/report', {
         templateUrl: 'views/reports.html',
         controller:'reportController'
+    }).when('/reminders', {
+        templateUrl: 'views/patientreminders.html',
+        controller:'reminderController'
+    }).when('/records', {
+        templateUrl: 'views/healthrecords.html',
+        controller:'recordsController'
+    }).when('/login', {
+        templateUrl: 'views/login.html',
+        controller:'LoginController'
+    }).when('/patientappointments', {
+        templateUrl: 'views/patientappointments.html',
+        controller:'patientappointmentController'
+    }).when('/patienthistory', {
+        templateUrl: 'views/patienthistory.html',
+        controller:'profileController'
     }).when('/globals', {
         templateUrl: 'views/globals.html',
         controller: 'globalsController'
@@ -180,8 +201,8 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
     }
 
     $rootScope.$on('$locationChangeStart', function(event, next, current) {
-        var publicPages = ['/', '/sign-in', '/patient','/nav'];
-      var patientPages = ['/','/report','/nursehome','/patient_demographics','/membership','/payment','/medication','/profile','/changepassword','/appointment'];
+        var publicPages = ['/', '/sign-in','/login', '/patient','/nav'];
+      var patientPages = ['/','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
   var AdminPages=['/','/nav','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2'];
   var doctorpages = ['/','/nav','/visit','/profile','/changepassword','/patientvisit','/patient','/payment','/medication','/allpatients'];
   var nursepages=['/','/nav','/visit','/nursehome','/patient_demographics','/patient','/patientvisit','/payment','/appointment','/profile','/changepassword'];
