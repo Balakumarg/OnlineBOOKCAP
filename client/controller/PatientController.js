@@ -1,6 +1,30 @@
 angular.module('tatluApp').controller('PatientController', function($scope, $http,fileUpload,$location,$rootScope) {
   var socket=io();
 
+  $scope.dataSource =  { "chart": { "caption": "Your Health Goal", "captionFontBold": "0", "captionFontSize": "20", "xAxisName": "Month",
+   "xAxisNameFontSize": "15", "xAxisNameFontBold": "0",  "yAxisNameFontSize": "15", "yAxisNameFontBold": "0", "paletteColors": "#2ECC71",
+    "plotFillAlpha": "80", "usePlotGradientColor": "0",  "bgcolor": "#", "bgalpha": "95", "canvasbgalpha": "0",
+     "basefontcolor": "000002", "showAlternateHGridColor": "0", "divlinealpha": "50", "divlinedashed": "0", "toolTipBgColor": "#000",
+      "toolTipPadding": "10", "toolTipBorderRadius": "5", "toolTipBorderThickness": "2", "toolTipBgAlpha": "62", "toolTipBorderColor": "#BBB",
+       "rotateyaxisname": "1", "canvasbordercolor": "#000000", "canvasborderthickness": ".3", "canvasborderalpha": "100", "showValues": "0",
+        "plotSpacePercent": "12" }, "data": [{ "label": "Jan", "value": "42" }, { "label": "Feb", "value": "81" },
+
+         { "label": "Jun", "value": "51" }, { "label": "Jul", "value": "60" }, { "label": "Aug", "value": "62" },
+          { "label": "Sep", "value": "61" }, { "label": "Oct", "value": "40" }, { "label": "Nov", "value": "90" },
+           { "label": "Dec", "value": "73" }]}
+
+           $scope.dataSource1 =  { "chart": { "caption": "Your Risk Assessment", "captionFontBold": "0", "captionFontSize": "20", "xAxisName": "Month",
+            "xAxisNameFontSize": "15", "xAxisNameFontBold": "0",  "yAxisNameFontSize": "15", "yAxisNameFontBold": "0", "paletteColors": "#DB0A5B",
+             "plotFillAlpha": "80", "usePlotGradientColor": "0",  "bgcolor": "#", "bgalpha": "95", "canvasbgalpha": "0",
+              "basefontcolor": "000002", "showAlternateHGridColor": "0", "divlinealpha": "50", "divlinedashed": "0", "toolTipBgColor": "#000",
+               "toolTipPadding": "10", "toolTipBorderRadius": "5", "toolTipBorderThickness": "2", "toolTipBgAlpha": "62", "toolTipBorderColor": "#BBB",
+                "rotateyaxisname": "1", "canvasbordercolor": "#000000", "canvasborderthickness": ".3", "canvasborderalpha": "100", "showValues": "0",
+                 "plotSpacePercent": "12" }, "data": [{ "label": "Jan", "value": "42" }, { "label": "Feb", "value": "81" },
+
+                  { "label": "Jun", "value": "51" }, { "label": "Jul", "value": "60" }, { "label": "Aug", "value": "62" },
+                   { "label": "Sep", "value": "61" }, { "label": "Oct", "value": "40" }, { "label": "Nov", "value": "90" },
+                    { "label": "Dec", "value": "73" }]}
+
 $scope.refreshpat=function(){
   $http.get('/patient/patient').success(function (response) {
       $scope.patientList = response;
@@ -10,6 +34,8 @@ $scope.refreshpat=function(){
 }
 
 $scope.refreshpat();
+
+
    $scope.refreshfacility = function () {
       $http.get('/facilityadm/facilityadm').success(function (response) {
           console.log(' READ IS SUCCESSFUL');
@@ -28,7 +54,7 @@ $scope.refreshpat();
 
 
   $scope.refreshdoctor();
-  
+
     $scope.refreshnurse = function () {
           $http.get('/nurse/nurse').success(function (response) {
               console.log(' READ IS SUCCESSFUL');
