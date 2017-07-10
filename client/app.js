@@ -125,7 +125,45 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/admin_report2', {
         templateUrl: 'views/admin_report2.html',
         controller:'admin_report2Controller'
+    })
+    
+    
+    
+    .when('/usermanagement_doctor', {
+        templateUrl: 'views/usermanagement_doctor.html',
+        controller: 'UserManagementController'
+    }).when('/usermanagement_call_center', {
+       templateUrl: 'views/usermanagement_call_center.html',
+       controller: 'UserManagementController'
+    }).when('/usermanagement_facility_admin', {
+        templateUrl: 'views/usermanagement_facility_admin.html',
+        controller: 'UserManagementController'
+    }).when('/usermanagement_front_desk', {
+        templateUrl: 'views/usermanagement_front_desk.html',
+        controller: 'UserManagementController'
+    }).when('/usermanagement_nurse', {
+        templateUrl: 'views/usermanagement_nurse.html',
+        controller: 'UserManagementController'
+    }).when('/userView_nurse', {
+        templateUrl: 'views/userView_nurse.html',
+        controller: 'UserManagementViewController'
+    }).when('/userView_doctor', {
+         templateUrl: 'views/userView_doctor.html',
+         controller: 'UserManagementViewController'
+    }).when('/userView_front_desk', {
+          templateUrl: 'views/userView_front_desk.html',
+          controller: 'UserManagementViewController'
+    }).when('/userView_call_center', {
+           templateUrl: 'views/userView_call_center.html',
+           controller: 'UserManagementViewController'
+    }).when('/userView_facility_admin', {
+            templateUrl: 'views/userView_facility_admin.html',
+            controller: 'UserManagementViewController'
     });
+    
+    
+    
+    
   });
 
   app.directive('navPage', function() {
@@ -209,7 +247,10 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
     $rootScope.$on('$locationChangeStart', function(event, next, current) {
         var publicPages = ['/', '/sign-in','/login', '/patient','/nav'];
       var patientPages = ['/','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
-  var AdminPages=['/','/nav','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2'];
+  var AdminPages=['/','/nav','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2',
+                 '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
+                         '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
+                         '/userView_call_center','/userView_facility_admin','/userView_front_desk'];
   var doctorpages = ['/','/nav','/visit','/profile','/changepassword','/patientvisit','/patient','/payment','/medication','/allpatients'];
   var nursepages=['/','/nav','/visit','/nursehome','/patient_demographics','/patient','/patientvisit','/payment','/appointment','/profile','/changepassword'];
   var callcenterpages=['/','/nav','/nursehome','/appointment','/allpatients','/profile','/patient','/changepassword'];
