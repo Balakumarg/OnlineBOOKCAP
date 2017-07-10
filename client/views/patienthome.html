@@ -1,0 +1,98 @@
+<style>
+.info-box-4 .content .text {
+    font-size: 15px;
+    margin: 5px 0;
+    color: #FFF;
+}
+.info-box-4 .content .number {
+    font-weight: normal;
+    font-size: 15px;
+    margin-top: 0px;
+    color: #FFF;
+}
+
+.card {
+    background-color: #fff;
+}
+</style>
+<br>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+  <md-content layout-padding>
+   <div class="card">
+       <div class="header">
+           <h2>Dashboard</h2>
+       </div>
+       <hr>
+       <div class="body">
+
+
+
+<div class="row">
+
+    <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    </div> -->
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <md-content layout-padding>
+        <div class="info-box-4 hover-zoom-effect" style="background-color:#03A9F4">
+
+            <div class="content">
+                <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope" style="color:#FFF;"></i>&nbsp; Send Message to your Doctor </div>
+                <div class="number">&nbsp;&nbsp;&nbsp;</div>
+            </div>
+        </div>
+          </md-content>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <md-content layout-padding>
+        <div class="info-box-4 hover-zoom-effect" style="background-color:#009688">
+
+            <div class="content">
+                <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-calendar" style="color:#FFF"></i> &nbsp; Schedule On Appointment</div>
+                <div class="number">&nbsp;&nbsp;&nbsp;</div>
+            </div>
+        </div>
+          </md-content>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <md-content layout-padding>
+    <div class="info-box-4 hover-zoom-effect" style="background-color:#F27935">
+
+        <div class="content">
+            <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-money" style="color:#FFF"></i> &nbsp; View your Account summary 2000rs</div>
+            <div class="number">&nbsp;&nbsp;&nbsp;</div>
+        </div>
+    </div>
+      </md-content>
+    </div>
+
+</div>
+
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+          <div class="header">
+              <h2>Patient Tracking</h2>
+          </div>
+             <hr>
+          <div class="body">
+            <div>
+   <fusioncharts id="chartcontainer" chartid="chart1" width="100%" height="250" type="line" dataFormat= 'json', dataSource="{{dataSource}}" config="{{chartoptions}}"></fusioncharts>
+
+</div>
+
+          </div>
+          <br>
+          <div class="body">
+            <div>
+   <fusioncharts id="chartcontainer" chartid="chart1" width="100%" height="250" type="line" dataFormat= 'json', dataSource="{{dataSource1}}" config="{{chartoptions}}"></fusioncharts>
+
+</div>
+          </div>
+      </div>
+  </div>
+
+
+</div>
+</div>
+    </md-content>
+</div>
