@@ -2,9 +2,9 @@
 <html lang="en" ng-app = "tatluApp">
 <head>
 <title>Tatlu</title>
- <link rel="stylesheet" href="views/urban_admin_html_files/app.css">
- <link href="css/font-awesome.css" rel="stylesheet">
-
+<link rel="stylesheet" href="views/urban_admin_html_files/app.css">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
 
 
@@ -52,6 +52,10 @@
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
  	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
  	 <script src="https://unpkg.com/angular-ui-bootstrap@2/dist/ui-bootstrap-tpls.js"></script>
+
+   <script src="https://fusioncharts.github.io/angular-fusioncharts/demos/js/angular-fusioncharts.min.js"></script>
+   <script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+
  	 <script src="https://unpkg.com/rrule@2"></script>
  	 <script src="https://unpkg.com/angular-bootstrap-colorpicker@3"></script>
  	 <script src="https://unpkg.com/angular-bootstrap-calendar"></script>
@@ -113,8 +117,6 @@
 <script>
   new WOW().init();
 </script>
-
-
 </head>
 <body>
 
@@ -122,8 +124,8 @@
   <!-- <div ng-view ></div> -->
 
 </nav-page>
-
-<div class="main_section_row" ng-view style="margin-top:-977px;margin-left:267px;width:77%;position:relative;z-index:1"></div>
+<div ng-show="!loggedIn" class="main_section_row loggedin_section" ng-view style="width:100%;position:relative; height:100%;z-index:1"></div>
+<div ng-show="loggedIn" class="main_section_row logged_section" ng-view style="margin-top:35px;margin-left:230px;width:81%;position:relative;z-index:1"></div>
 
 <!--
 <article class="main_section">
@@ -132,7 +134,11 @@
   </div>
  </article> -->
 
-
+<!--<script>
+  $(document).ready(function(){
+    $(".main_section_row").find(".card-top").css({"background":"#0c0"});
+  });
+</script>-->
 
 </body>
 </html>
