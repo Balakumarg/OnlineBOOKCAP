@@ -278,56 +278,56 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
         var restrictedPage = publicPages.indexOf($location.path()) === -1;
         if (restrictedPage && !$sessionStorage.tokenDetails && $location.path() != '') {
           // alert("Log In First");
-            $location.path('/login');
+            $location.path('/Unauthorized');
 
         }else{
           if (authUser != undefined) {
                        if(authUser.currentUser.userInfo.usertype==='Patient'){
                          var Patient = patientPages.indexOf($location.path()) === -1;
                          if(Patient){
-                           $location.path('/login');
+                           $location.path('/Unauthorized');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Admin'){
                          var Admin = AdminPages.indexOf($location.path()) === -1;
                          if(Admin){
-                           $location.path('/login');
+                           $location.path('/Unauthorized');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Doctor'){
                          var Doctor = doctorpages.indexOf($location.path()) === -1;
                          if(Doctor){
-                           $location.path('/login');
+                           $location.path('/Unauthorized');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Nurse'){
                          var Nurse = nursepages.indexOf($location.path()) === -1;
                          if(Nurse){
-                           $location.path('/login');
+                           $location.path('/Unauthorized');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Callcenter'){
                          var Callcenter = callcenterpages.indexOf($location.path()) === -1;
                          if(Callcenter){
-                           $location.path('/login');
+                           $location.path('/Unauthorized');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Frontdesk'){
                                 var Frontdesk = frondeskpages.indexOf($location.path()) === -1;
                                 if(Frontdesk){
-                                  $location.path('/login');
+                                  $location.path('/Unauthorized');
                                 }
 
                               }
                               if(authUser.currentUser.userInfo.usertype==='FacilityAdmin'){
                                        var FacilityAdmin = facilityadminpages.indexOf($location.path()) === -1;
                                        if(FacilityAdmin){
-                                         $location.path('/login');
+                                         $location.path('/Unauthorized');
                                        }
 
                                      }
