@@ -26434,7 +26434,7 @@ button.md-button span {background: #55c9ba;width: auto; padding: 10px 20px; colo
 .loading_head_section{background:#01c0c8;padding:15px 0px;color:#FFF;font-size:14px;text-transform:uppercase; box-shadow: 0 2px 3px rgba(0,0,0,.3); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.3); -moz-box-shadow: 0 2px 3px rgba(0,0,0,.3); -webkit-transition: all 0.4s; -o-transition: all 0.4s;}
 .loading_head_section ul{margin-bottom:0px;}
 .account_btn{position:relative;}
-.account_btn:after{left:0px;top:0px;height:30px;width:30px;background:url("../../uploads/admin.jpg")no-repeat center center;content:"";position:absolute;border-radius:200px;margin-top:15px;margin-left:-20px;background-size: contain;}
+/*.account_btn:after{left:0px;top:0px;height:30px;width:30px;background:url("../../uploads/admin.jpg")no-repeat center center;content:"";position:absolute;border-radius:200px;margin-top:15px;margin-left:-20px;background-size: contain;}*/
 
 @media screen and (max-width: 767px) {
 .main_section_row.logged_section{position: absolute !important; width: 100% !important; top: 40px; left: 0px; height: 100%;margin:0px !important}
