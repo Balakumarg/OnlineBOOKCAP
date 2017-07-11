@@ -125,6 +125,9 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/admin_report2', {
         templateUrl: 'views/admin_report2.html',
         controller:'admin_report2Controller'
+    }).when('/referrals', {
+        templateUrl: 'views/referrals.html',
+        controller:'PatientController'
     }).when('/patienttrackingboard', {
         templateUrl: 'views/patienttrackingboard.html',
         controller:'PatientController'
@@ -256,7 +259,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
         var publicPages = ['/', '/sign-in','/login', '/patient','/nav'];
            var patientPages = ['/','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
 
-  var AdminPages=['/','/nav','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2',
+  var AdminPages=['/','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2',
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                          '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                          '/userView_call_center','/userView_facility_admin','/userView_front_desk'];
