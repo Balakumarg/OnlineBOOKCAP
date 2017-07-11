@@ -1,32 +1,77 @@
-<div>
+<style>
 
-<select ng-model= "fmanagement" >
-<option value="" disabled selected>Select User</option>
-  <option>Facility Admin</option>
-  <option>Doctor</option>
+.card {
+    background-color: #fff;
+}
+</style>
+<br>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-  <option>Nurse</option>
+  <md-content layout-padding>
+   <div class="card">
+       <div class="header">
+           <h2>Form Management</h2>
+       </div>
+       <div class="body">
 
-  <option>Call Center</option>
 
-  <option>Front Desk</option>
 
-</select>
+    <div class="row">
+
+
+     <div class="col-sm-3 col-xs-3">
+    <label>Doctor Name</label>
+    <input type="text" ng-model="form.doctorname">
+    </div>
+     <div class="col-sm-3 col-xs-3">
+       <label>Specialization</label>
+    <input type="text" ng-model="form.special">
+    </div>
+    <div class="col-sm-3 col-xs-3">
+    <label>Position</label>
+    <input type="text" ng-model="form.position">
+    </div>
+       <div class="col-sm-2 col-xs-2">
+    <button type="button" ng-click="">Search</button>
+    </div>
+    </div>
+    </div>
+       <div class="body">
+
+
+<h3>Edit Form Appointment</h3>
+<br>
+<div class="col-sm-3 col-xs-3">
+
+<md-select ng-model= "fmanagement" >
+<md-option value="" disabled selected>Select User</md-option>
+  <md-option>Facility Admin</md-option>
+  <md-option>Doctor</md-option>
+
+  <md-option>Nurse</md-option>
+
+  <md-option>Call Center</md-option>
+
+  <md-option>Front Desk</md-option>
+
+</md-select>
 </div>
 <div ng-switch on="fmanagement">
 <div ng-switch-when = "Facility Admin">
 
 
 <div>
-  <table class="table">
+  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+
     <caption>Facility Admin Access</td>
     <thead>
       <tr>
         <th>Form name</th>
         <th>Add</th>
+        <th>View</th>
         <th>Edit</th>
         <th>Delete</th>
-        
+
 
       </tr>
     </thead>
@@ -35,6 +80,8 @@
         <td>Doctor Management</td>
 
         <td><input type="checkbox"  ng-model="f.doctorRegAdd" >
+</td>
+<td><input type="checkbox"  ng-model="f.doctorRegView" >
 </td>
         <td><input type="checkbox"  ng-model="f.doctorRegEdit">
 </td>
@@ -47,6 +94,8 @@
         <td>Nurse Management</td>
         <td><input type="checkbox" ng-model="nuraddi">
 </td>
+<td><input type="checkbox" ng-model="nurview">
+</td>
         <td><input type="checkbox" ng-model="nurediti">
 </td>
         <td><input type="checkbox" ng-model="nurdeletei">
@@ -54,53 +103,16 @@
 
 
       </tr>
-      <tr>
-        <td> <button type="button" ng-click="facilityAccess(f)">Submit</button></td>
-      </tr>
+      <!-- <tr>
+        <td> </td>
+      </tr> -->
 
     </tbody>
   </table>
-
-
+  <div>
+<button type="button" ng-click="facilityAccess(f)">Submit</button>
+</div>
 </div></div>
-
-
- <!-- Modal -->
- <!-- <div class="modal fade" id="myModal" role="dialog"> -->
-   <!-- <div class="modal-dialog">
-     <div class="modal-content">
-       <div class="modal-header">
-         <button type="button" class="close" data-dismiss="modal">&times;</button>
-       </div>
-       <div class="modal-body">
-         <table class="table">
-           <thead>
-             <tr>
-
-
-
-
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-             </tr>
-
-           </tbody>
-         </table>
-
-       </div>
-       <div class="modal-footer">
-         <button type="button" class="btn btn-default">Submit</button>
-       </div>
-     </div>
-
-   </div>
- </div> -->
-
-
-
-<!-- </div> -->
 
 
 
@@ -111,7 +123,8 @@
 Search:<input type="text" ng-model="docName" placeholder="Id or name or hospital">
 
 <div>
-  <table class="table">
+  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+
     <thead>
       <tr>
         <th>Id</th>
@@ -145,7 +158,8 @@ Search:<input type="text" ng-model="docName" placeholder="Id or name or hospital
   Search:<input type="text" ng-model="nursemodel" placeholder="Id or name or hospital">
 
   <div>
-    <table class="table">
+    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+
       <thead>
         <tr>
           <th>Id</th>
@@ -183,7 +197,7 @@ Search:<input type="text" ng-model="docName" placeholder="Id or name or hospital
 Search:<input type="text" ng-model="callcentermodel" placeholder="Id or name or hospital">
 
 <div>
-  <table class="table">
+  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
     <thead>
       <tr>
         <th>Id</th>
@@ -222,7 +236,8 @@ Search:<input type="text" ng-model="callcentermodel" placeholder="Id or name or 
   Search:<input type="text" ng-model="frontmodel" placeholder="Id or name or hospital">
 
   <div>
-    <table class="table">
+    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+
       <thead>
         <tr>
           <th>Id</th>
@@ -248,4 +263,9 @@ Search:<input type="text" ng-model="callcentermodel" placeholder="Id or name or 
 
   </div>
 </div>
+</div>
+
+</div>
+</div>
+    </md-content>
 </div>
