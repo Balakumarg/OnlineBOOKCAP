@@ -136,7 +136,7 @@
             <nav role="navigation" class="ps-container ps-active-y">
                <ul class="nav">
 
-                                   <li class="menu-accordion" ng-repeat="m in menuList" ng-click="showChilds(m)">
+                                   <li class="menu-accordion" ng-repeat="m in menuList | orderBy:'sl_no'" ng-click="showChilds(m)">
                                       <a class="active "href={{m.href}}> <i class={{m.icon}} aria-hidden="true"></i><span>{{m.menuName}}</span> </a>
                                       <ul class="sub-menu">
                                          <li ng-repeat="sm in m.subMenu" ng-show="m.active" ><a href={{sm.href}}>{{sm.name}}</a></li>
