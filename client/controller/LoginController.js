@@ -13,12 +13,12 @@ $scope.errormessage=$scope.response.message;
         if (response.data.success === true) {
           if(response.data.userDetail.UserType=="Patient"){
 
-              $location.path('/nursehome');
+              $location.path('/patienthome');
 
           }
           if(response.data.userDetail.UserType=="Admin"){
 
-              $location.path('/usermanagement');
+              $location.path('/dashboard');
           }
           if(response.data.userDetail.UserType=="Doctor"){
 
