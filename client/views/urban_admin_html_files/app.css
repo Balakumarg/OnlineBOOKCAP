@@ -26424,15 +26424,20 @@ input::placeholder{color:#FFF;}
 .layout-small-menu .brand .toggle-sidebar { position: absolute; left: 100%; width: 50px; height: 55px; background:#495469; top: 0px; content: ""; padding: 20px 18px; }
 .loggedin_section:after { background:url("../../uploads/bg-1.jpg") no-repeat 0px 0px; background-size:cover;width: 100%; position: fixed; height: 100%; content: ""; top: 0px; left: 0px; z-index: -1; }
 .layout-small-menu .brand .toggle-sidebar:after { position: absolute; left:15px; width: 50px; height: 55px; background:#495469; top: 0px; content: ""; transform: skewX(25deg); z-index: -1; }
-.loading_page_section{position:fixed;top:0px;left:0px;content:"";float:left;width:100%;height:100%; background:url("../../images/tatlubg.jpg") no-repeat 0px 0px;}
+.loading_page_section{position:fixed;top:0px;left:0px;content:"";float:left;width:100%;height:100%; background-size:cover; background:url("../../images/tatlubg.jpg") no-repeat 0px 0px;}
 .md-select-placeholder, md-input-container label{color:#333 !important; font-weight:normal;}
 button.md-button span {background: #55c9ba;width: auto; padding: 10px 20px; color: #FFF; border-radius: 5px; opacity: 1;box-shadow: 0 2px 3px rgba(0,0,0,.3); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.3); -moz-box-shadow: 0 2px 3px rgba(0,0,0,.3); -webkit-transition: all 0.4s; -o-transition: all 0.4s;}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{color:#333 !important;}
 .nav-tabs>li>a {color: #666;}
 .main_section_row .layout-padding:first-child, .cnt_main_section{min-height:620px;}
 .cnt_main_section .layout-padding{min-height:auto !important;}
+.loading_head_section{background:#01c0c8;padding:15px 0px;color:#FFF;font-size:14px;text-transform:uppercase; box-shadow: 0 2px 3px rgba(0,0,0,.3); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.3); -moz-box-shadow: 0 2px 3px rgba(0,0,0,.3); -webkit-transition: all 0.4s; -o-transition: all 0.4s;}
+.loading_head_section ul{margin-bottom:0px;}
+.account_btn{position:relative;}
+.account_btn:after{left:0px;top:0px;height:30px;width:30px;background:url("../../uploads/admin.jpg")no-repeat center center;content:"";position:absolute;border-radius:200px;margin-top:15px;margin-left:-20px;background-size: contain;}
+
 @media screen and (max-width: 767px) {
-.main_section_row.logged_section {position: absolute !important; width: 100% !important; top: 40px; left: 0px; height: 100%;margin:0px !important}
+.main_section_row.logged_section{position: absolute !important; width: 100% !important; top: 40px; left: 0px; height: 100%;margin:0px !important}
 .app .offscreen-left{position:absolute;left:0px;top:40px;width:100%;height:100%;content:"";z-index:999999;}
 .fixed_menu_sec { float: left; width: 100%; position: fixed; right: 0px; top: 0px; z-index: 999; }
 .header_section .header.navbar { width: 100%; height: 55px; display: block; clear: none; float: right; margin: 0px; }
