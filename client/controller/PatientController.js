@@ -13,7 +13,7 @@ angular.module('tatluApp').controller('PatientController', function($scope, $htt
           { "label": "Sep", "value": "61" }, { "label": "Oct", "value": "40" }, { "label": "Nov", "value": "90" },
            { "label": "Dec", "value": "73" }]}
 
-     $scope.dataSourcead2 =  { "chart": { "caption": "Hospital Earnings", "captionFontBold": "0", "captionFontSize": "20", "xAxisName": "Month",
+     $scope.dataSourcead2 =  { "chart": { "caption": "TATLU Revenue", "captionFontBold": "0", "captionFontSize": "20", "xAxisName": "Month",
       "xAxisNameFontSize": "15", "xAxisNameFontBold": "0",  "yAxisNameFontSize": "15", "yAxisNameFontBold": "0", "paletteColors": "#8e44ad",
      "plotFillAlpha": "80", "usePlotGradientColor": "0",  "bgcolor": "#", "bgalpha": "95", "canvasbgalpha": "0",
       "basefontcolor": "000002", "showAlternateHGridColor": "0", "divlinealpha": "50", "divlinedashed": "0", "toolTipBgColor": "#000",
