@@ -28,13 +28,13 @@
 
             <form id="sign_in" method="POST">
            <p style="color:red">  {{errormessage}} </p><br>
-                <div class="input-group"> <span class="input-group-addon"> <i class="zmdi zmdi-account"></i> </span>
+                <div class="input-group"> <span class="input-group-addon"> <i class="fa fa-user"></i> </span>
                     <div class="form-line">
-                      <input type="text" class="form-control"  name="id" placeholder="Your ID" value="Yourname" ng-model="User.id" required autofocus>
+                      <input type="text" class="form-control"  name="id" placeholder="Email ID" value="Your Email" ng-model="User.email" required autofocus>
 
                     </div>
                 </div>
-                <div class="input-group"> <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
+                <div class="input-group"> <span class="input-group-addon"> <i class="fa fa-lock"></i> </span>
                     <div class="form-line">
                       <input type="password" class="form-control" name="password" placeholder="Password"  value="password" ng-model="User.Password"   required>
 
