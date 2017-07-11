@@ -125,11 +125,16 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/admin_report2', {
         templateUrl: 'views/admin_report2.html',
         controller:'admin_report2Controller'
-    })
-    
-    
-    
-    .when('/usermanagement_doctor', {
+    }).when('/useractivities', {
+          templateUrl: 'views/useractivities.html',
+          controller: 'UserManagementViewController'
+}).when('/filebackup', {
+      templateUrl: 'views/filebackup.html',
+      controller: 'UserManagementViewController'
+}).when('/adminreminder', {
+      templateUrl: 'views/adminreminders.html',
+      controller: 'UserManagementViewController'
+}).when('/usermanagement_doctor', {
         templateUrl: 'views/usermanagement_doctor.html',
         controller: 'UserManagementController'
     }).when('/usermanagement_call_center', {
@@ -246,8 +251,9 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
 
     $rootScope.$on('$locationChangeStart', function(event, next, current) {
         var publicPages = ['/', '/sign-in','/login', '/patient','/nav'];
-      var patientPages = ['/','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
-  var AdminPages=['/','/nav','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2',
+           var patientPages = ['/','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
+
+  var AdminPages=['/','/nav','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2',
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                          '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                          '/userView_call_center','/userView_facility_admin','/userView_front_desk'];
@@ -266,56 +272,56 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
         var restrictedPage = publicPages.indexOf($location.path()) === -1;
         if (restrictedPage && !$sessionStorage.tokenDetails && $location.path() != '') {
           // alert("Log In First");
-            $location.path('/Unauthorized');
+            $location.path('/login');
 
         }else{
           if (authUser != undefined) {
                        if(authUser.currentUser.userInfo.usertype==='Patient'){
                          var Patient = patientPages.indexOf($location.path()) === -1;
                          if(Patient){
-                           $location.path('/Unauthorized');
+                           $location.path('/login');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Admin'){
                          var Admin = AdminPages.indexOf($location.path()) === -1;
                          if(Admin){
-                           $location.path('/Unauthorized');
+                           $location.path('/login');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Doctor'){
                          var Doctor = doctorpages.indexOf($location.path()) === -1;
                          if(Doctor){
-                           $location.path('/Unauthorized');
+                           $location.path('/login');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Nurse'){
                          var Nurse = nursepages.indexOf($location.path()) === -1;
                          if(Nurse){
-                           $location.path('/Unauthorized');
+                           $location.path('/login');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Callcenter'){
                          var Callcenter = callcenterpages.indexOf($location.path()) === -1;
                          if(Callcenter){
-                           $location.path('/Unauthorized');
+                           $location.path('/login');
                          }
 
                        }
                        if(authUser.currentUser.userInfo.usertype==='Frontdesk'){
                                 var Frontdesk = frondeskpages.indexOf($location.path()) === -1;
                                 if(Frontdesk){
-                                  $location.path('/Unauthorized');
+                                  $location.path('/login');
                                 }
 
                               }
                               if(authUser.currentUser.userInfo.usertype==='FacilityAdmin'){
                                        var FacilityAdmin = facilityadminpages.indexOf($location.path()) === -1;
                                        if(FacilityAdmin){
-                                         $location.path('/Unauthorized');
+                                         $location.path('/login');
                                        }
 
                                      }
