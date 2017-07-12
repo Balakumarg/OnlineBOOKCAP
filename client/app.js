@@ -77,21 +77,9 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/patienthistory', {
         templateUrl: 'views/patienthistory.html',
         controller:'profileController'
-    }).when('/globals', {
-        templateUrl: 'views/globals.html',
-        controller: 'globalsController'
-    }).when('/globals2', {
-        templateUrl: 'views/globals2.html',
-        controller: 'globals2Controller'
-    }).when('/globals3', {
-        templateUrl: 'views/globals3.html',
-        controller: 'globals3Controller'
     }).when('/patient_demographics', {
         templateUrl: 'views/patient_demographics.html',
         controller: 'PatientdemoController'
-    }).when('/managelayout', {
-        templateUrl: 'views/managelayout.html',
-        controller: 'managelayoutController'
     }).when('/notes', {
         templateUrl: 'views/notes.html',
         controller:'notesController'
@@ -259,7 +247,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
         var publicPages = ['/', '/sign-in','/login', '/patient','/nav'];
            var patientPages = ['/','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
 
-  var AdminPages=['/','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2',
+  var AdminPages=['/','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement',
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                          '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                          '/userView_call_center','/userView_facility_admin','/userView_front_desk'];
