@@ -1,24 +1,24 @@
 <style>
-.info-box-4 .content .text {
-    font-size: 15px;
-    margin: 5px 0;
-    color: #FFF;
+.info-box-4 .content .text { font-size: 16px; margin: 5px 0; color: #555; }
+.info-box-4 .content .number { font-weight: normal; font-size: 36px; margin-top: 0px; color: #333; }
+.info-box-4 .icon { position: absolute; right: 20px; top: 50%; text-align: center; height: 36px; width: 36px; margin-top: -22px; }
+.info-box-4 { box-shadow: none; min-height: 100px; display: flex; cursor: default; background-color: #fff; position: relative; overflow: hidden; margin-bottom: 30px; transition: .5s; border: 1px solid #f2f2f2; }
+.info-box-4{-webkit-transition:all 0.4s linear;-o-transition:all 0.4s linear;-moz-transition:all 0.4s linear;}
+.info-box-4:hover {
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    transition: all 150ms linear;
 }
-.info-box-4 .content .number {
-    font-weight: normal;
-    font-size: 15px;
-    margin-top: 0px;
-    color: #FFF;
-}
-
+.info-box-4:hover .icon{font-size:30px;transform:rotate(-32deg) scale(1.4);-wbkit-transform:rotate(-32deg) scale(1.4);-o-transform:rotate(-32deg) scale(1.4);-moz-transform:rotate(-32deg) scale(1.4);}
 .card {
     background-color: #fff;
 }
+.info-box-4 .icon{font-size:24px; transition:all 0.4s linear;-webkit-transition:all 0.4s linear;-o-transition:all 0.4s linear;-moz-transition:all 0.4s linear;}
+.info-box-4 .content { display: inline-block; padding: 7px 16px; }
 </style>
 <br>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-  <md-content layout-padding>
+  <md-content layout-padding class="cnt_main_section">
    <div class="card">
        <div class="header">
            <h2>Dashboard</h2>
@@ -34,33 +34,33 @@
     </div> -->
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
           <md-content layout-padding>
-        <div class="info-box-4 hover-zoom-effect" style="background-color:#03A9F4">
-
+        <div class="info-box-4 hover-zoom-effect">
+    <div class="icon"><i class="fa fa-envelope" style="color:#03A9F4;"></i> </div>
             <div class="content">
-                <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope" style="color:#FFF;"></i>&nbsp; Send Message to your Doctor </div>
-                <div class="number">&nbsp;&nbsp;&nbsp;</div>
+                <div class="text">Send Message to your Doctor </div>
+                <div class="number"></div>
             </div>
         </div>
           </md-content>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
           <md-content layout-padding>
-        <div class="info-box-4 hover-zoom-effect" style="background-color:#009688">
-
+        <div class="info-box-4 hover-zoom-effect">
+    <div class="icon"><i class="fa fa-calendar" style="color:#009688"></i></div>
             <div class="content">
-                <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-calendar" style="color:#FFF"></i> &nbsp; Schedule On Appointment</div>
-                <div class="number">&nbsp;&nbsp;&nbsp;</div>
+                <div class="text">Schedule On Appointment</div>
+                <div class="number"></div>
             </div>
         </div>
           </md-content>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <md-content layout-padding>
-    <div class="info-box-4 hover-zoom-effect" style="background-color:#F27935">
-
+    <div class="info-box-4 hover-zoom-effect">
+    <div class="icon"><i class="fa fa-money" style="color:#F27935"></i></div>
         <div class="content">
-            <div class="text">&nbsp;&nbsp;&nbsp; <i class="fa fa-money" style="color:#FFF"></i> &nbsp; View your Account summary 0rs</div>
-            <div class="number">&nbsp;&nbsp;&nbsp;</div>
+            <div class="text">View your Account summary 0rs</div>
+            <div class="number"></div>
         </div>
     </div>
       </md-content>
