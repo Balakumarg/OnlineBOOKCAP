@@ -247,7 +247,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
         var publicPages = ['/', '/sign-in','/login', '/patient','/nav'];
            var patientPages = ['/','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
 
-  var AdminPages=['/','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement',
+  var AdminPages=['/','/admin_report1','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement',
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                          '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                          '/userView_call_center','/userView_facility_admin','/userView_front_desk'];
