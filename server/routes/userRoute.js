@@ -60,7 +60,7 @@ router.post('/login', function(req, res) {
 });
 router.put('/update/:id', function(req, res){
   User.findOne({
-      id: req.body.id
+      id: req.body.email
   },function(err, profile) {
       if (err) {
           res.json(err);
