@@ -28,7 +28,7 @@ router.post('/signup', function(req, res) {
 
 router.post('/login', function(req, res) {
     User.findOne({
-        id: req.body.id
+        id: req.body.email
     }, function(err, user) {
         if (err) {
             res.json(err);
