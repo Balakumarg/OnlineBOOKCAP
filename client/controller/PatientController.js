@@ -181,7 +181,7 @@ $scope.addpatient=function(){
 $rootScope.petientDetails=response;
 
         alert($scope.patient.id+"Registration completed!!!!");
-        $location.path('/membertype');
+        $location.path('/login');
         });
 
         $http.post('/api/signup', $scope.patient).then(function(response) {
