@@ -32,6 +32,12 @@ var memberpalnRoute=require('./server/routes/membershipPlan.js');
 var rulesRoute=require('./server/routes/rulescrud.js');
 var UserRoute=require('./server/routes/userRoute.js');
 var OnlineRoute=require('./server/routes/onlinecrud.js');
+var doctorhomeRoute=require('./server/routes/doctorhomecrud.js');
+
+
+
+
+
 var server=require('http').Server(app);
 var io=require('socket.io').listen(server);
 
@@ -83,6 +89,7 @@ app.use('/plan',memberpalnRoute);
 app.use('/rules',rulesRoute);
 app.use('/api', UserRoute);
 app.use('/online', OnlineRoute);
+app.use('/doctorhome',doctorhomeRoute);
 
 
 
