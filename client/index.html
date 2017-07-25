@@ -10,7 +10,13 @@
 
 
 <script src="js/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/fullcalendar.css"/>
+<!-- jquery, moment, and angular have to get included before fullcalendar -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
 
+<script type="text/javascript" src="js/fullcalendar.min.js"></script>
+<script type="text/javascript" src="js/gcal.js"></script>
  <link href="css/font-awesome.css" rel="stylesheet">
  <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 
@@ -46,12 +52,14 @@
  	<link rel="stylesheet" type="text/css" href="css/ng-flat-datepicker.css">
 
 
- 	 <script src="https://unpkg.com/moment@2.17.1"></script>
- 	 <script src="https://unpkg.com/interactjs@1"></script>
+
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
  	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
  	 <script src="https://unpkg.com/angular-ui-bootstrap@2/dist/ui-bootstrap-tpls.js"></script>
+
+   <script src="https://unpkg.com/moment@2.17.1"></script>
+ 	 <script src="https://unpkg.com/interactjs@1"></script>
 
    <script src="https://fusioncharts.github.io/angular-fusioncharts/demos/js/angular-fusioncharts.min.js"></script>
    <script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
@@ -71,6 +79,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.js"></script>
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+ <!-- <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/lib/jquery.min.js'></script>
+ <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/lib/jquery-ui.min.js'></script>
+ <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/fullcalendar.min.js'></script> -->
+
+
+
+ <script type="text/javascript" src="js/calendar.js"></script>
+  <!-- <script type="text/javascript" src="js/app.hospital.min.js"></script> -->
+
  <script type="text/javascript" src="js/ng-flat-datepicker.js"></script>
  <script type="text/javascript" src="js/ng-flat-datepicker.min.js"></script>
  <!-- <link rel="stylesheet" href="js/simple-autocomplete.css">
@@ -88,6 +106,9 @@
 <script type="text/javascript" src="controller/appointmentController.js"></script>
 <script type="text/javascript" src="controller/patientvisitController.js"></script>
 <script type="text/javascript" src="controller/patientdemographicsController.js"></script>
+<script type="text/javascript" src="controller/globalsController.js"></script>
+<script type="text/javascript" src="controller/globals2Controller.js"></script>
+<script type="text/javascript" src="controller/globals3Controller.js"></script>
 <script type="text/javascript" src = "controller/rulesController.js"></script>
 <script type="text/javascript" src = "controller/alertController.js"></script>
 <script type="text/javascript" src="controller/notesController.js"></script>
@@ -97,9 +118,11 @@
 <script type="text/javascript" src="controller/membershipPaymentController.js"></script>
 <script type="text/javascript" src="controller/HomeController.js"></script>
 <script type="text/javascript" src="controller/profileController.js"></script>
-<script type="text/javascript" src="controller/appointmentController.js"></script>
+
 <script type="text/javascript" src="controller/UserManagementViewController.js"></script>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src = "controller/doctorController.js"></script>
+
 
 
 <script src="./controller/Authentication.js"></script>
@@ -109,6 +132,7 @@
 <script src="js/ngStorage.min.js"></script>
 
 <script src="js/scripts.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
 <script src="js/wow.min.js"></script>
 <script>
   new WOW().init();
@@ -135,11 +159,6 @@
     $(".main_section_row").find(".card-top").css({"background":"#0c0"});
   });
 </script>-->
-<script src="views/urban_admin_html_files/reponsive_tabs.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$(".first_tab").champ();
-	});
-</script>
+
 </body>
 </html>

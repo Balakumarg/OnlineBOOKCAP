@@ -1,4 +1,4 @@
-var app = angular.module('tatluApp', ['ngRoute','ngAnimate',"ng-fusioncharts", 'ngAria','ngMessages','ngMaterial','ngFlatDatepicker','ngCookies', 'ngStorage']);
+var app = angular.module('tatluApp', ['ngRoute','ui.calendar','ui.bootstrap','mwl.calendar','ngAnimate',"ng-fusioncharts", 'ngAria','ngMessages','ngMaterial','ngFlatDatepicker','ngCookies', 'ngStorage']);
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
@@ -77,9 +77,21 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/patienthistory', {
         templateUrl: 'views/patienthistory.html',
         controller:'profileController'
+    }).when('/globals', {
+        templateUrl: 'views/globals.html',
+        controller: 'globalsController'
+    }).when('/globals2', {
+        templateUrl: 'views/globals2.html',
+        controller: 'globals2Controller'
+    }).when('/globals3', {
+        templateUrl: 'views/globals3.html',
+        controller: 'globals3Controller'
     }).when('/patient_demographics', {
         templateUrl: 'views/patient_demographics.html',
         controller: 'PatientdemoController'
+    }).when('/managelayout', {
+        templateUrl: 'views/managelayout.html',
+        controller: 'managelayoutController'
     }).when('/notes', {
         templateUrl: 'views/notes.html',
         controller:'notesController'
@@ -158,13 +170,65 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/userView_facility_admin', {
             templateUrl: 'views/userView_facility_admin.html',
             controller: 'UserManagementViewController'
+    }).when('/bookappointment', {
+        templateUrl: 'views/bookappointment.html',
+        controller:'PatientController'
+    }).when('/vitalscheck', {
+        templateUrl: 'views/vitalscheck.html',
+        controller:'PatientController'
+    }).when('/doctorhome', {
+        templateUrl: 'views/doctorhome.html',
+        controller:'doctorController'
+    }).when('/doctorschedule', {
+        templateUrl: 'views/doctorschedule.html',
+        controller:'appointmentController'
+    }).when('/todayappointment', {
+        templateUrl: 'views/doctortodayappointment.html',
+        controller:'doctorController'
+    }).when('/doctoradddescription', {
+        templateUrl: 'views/doctordescription.html',
+          controller:'doctorController'
+    }).when('/doctoraddpatienttype', {
+        templateUrl: 'views/doctoraddpatienttype.html',
+          controller:'doctorController'
+    }).when('/doctorcheckvitals', {
+        templateUrl: 'views/doctorcheckvitals.html',
+           controller:'doctorController'
+    }).when('/doctoraddmedication', {
+        templateUrl: 'views/doctoraddmedication.html',
+          controller:'doctorController'
+    }).when('/doctoraddprocedure', {
+        templateUrl: 'views/doctoraddprocedure.html',
+          controller:'doctorController'
+    }).when('/doctoradddiagnosis', {
+        templateUrl: 'views/doctoradddiagnosis.html',
+          controller:'doctorController'
+    }).when('/doctoraddgoal', {
+        templateUrl: 'views/doctoraddgoal.html',
+          controller:'doctorController'
+    }).when('/doctoraddreminder', {
+        templateUrl: 'views/doctoraddreminder.html',
+          controller:'doctorController'
+    }).when('/doctorreferdoctor', {
+        templateUrl: 'views/doctorreferdoctor.html',
+          controller:'doctorController'
+    }).when('/doctorrefertest', {
+        templateUrl: 'views/doctorrefertest.html',
+          controller:'doctorController'
+    }).when('/doctorpayment', {
+        templateUrl: 'views/doctorpayment.html',
+          controller:'doctorController'
+    }).when('/doctormypatients', {
+        templateUrl: 'views/doctormypatients.html',
+        controller:'PatientController'
+    }).when('/doctoraddpatient', {
+        templateUrl: 'views/doctoraddpatient.html',
+        controller:'PatientController'
     });
-    
-    
-    
-    
-  });
 
+
+
+  });
   app.directive('navPage', function() {
   return {
     restrict: 'E',
@@ -177,7 +241,7 @@ app.factory('alert', function($uibModal) {
 
      function show(action, event) {
        return $uibModal.open({
-         templateUrl: 'views/modalContent.html',
+         templateUrl: '/views/modalContent1.html',
          controller: function() {
            var vm = this;
            vm.action = action;
@@ -245,13 +309,16 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
 
     $rootScope.$on('$locationChangeStart', function(event, next, current) {
         var publicPages = ['/', '/sign-in','/login', '/patient','/nav'];
-           var patientPages = ['/','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
+           var patientPages = ['/','/appointment','/vitalscheck','/bookappointment','/login','/visithistory','/patienthistory','/report','/patientappointments','/patienthome','/patient_demographics','/membership','/procedure','/records','/reminders','/payment','/medication','/profile','/changepassword','/appointment'];
 
-  var AdminPages=['/','/admin_report1','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement',
+  var AdminPages=['/','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit','/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment','/appointment','/changepassword','/membershipplan','/profile','/rules','/alert','/usermanagement','/facility','/medication','/managelayout','/procedure','/formmanagement','/globals','/globals3','/globals2',
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                          '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                          '/userView_call_center','/userView_facility_admin','/userView_front_desk'];
-  var doctorpages = ['/','/nav','/visit','/profile','/changepassword','/patientvisit','/patient','/payment','/medication','/allpatients'];
+  var doctorpages = ['/','/nav','/doctoraddreminder','/doctoradddiagnosis','/doctoraddpatienttype','/doctorschedule','/doctoradddescription',
+  '/vitalscheck','/doctorrefertest','/doctorreferdoctor','/doctoraddpatient','/doctormypatients',
+'/doctorcheckvitals','/todayappointment', '/doctorhome','/visit','/profile','/changepassword','/doctoraddgoal',
+'/doctoraddprocedure','/doctorpayment','/doctoraddmedication','/allpatients'];
   var nursepages=['/','/nav','/visit','/nursehome','/patient_demographics','/patient','/patientvisit','/payment','/appointment','/profile','/changepassword'];
   var callcenterpages=['/','/nav','/nursehome','/appointment','/allpatients','/profile','/patient','/changepassword'];
   var frondeskpages=['/','/nav','/appointment','/nursehome','/patient','/allpatients','/profile','/changepassword'];
