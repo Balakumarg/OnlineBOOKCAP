@@ -28,7 +28,7 @@ router.post('/signup', function(req, res) {
 
 router.post('/login', function(req, res) {
     User.findOne({
-        id: req.body.email
+        id: req.body.id
     }, function(err, user) {
         if (err) {
             res.json(err);
@@ -60,7 +60,7 @@ router.post('/login', function(req, res) {
 });
 router.put('/update/:id', function(req, res){
   User.findOne({
-      id: req.body.email
+      id: req.body.id
   },function(err, profile) {
       if (err) {
           res.json(err);
