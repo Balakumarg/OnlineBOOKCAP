@@ -22,7 +22,7 @@ $scope.errormessage=$scope.response.message;
           }
           if(response.data.userDetail.UserType=="Doctor"){
 
-              $location.path('/visit');
+              $location.path('/doctorhome');
           }
           if(response.data.userDetail.UserType=="Nurse"){
 
