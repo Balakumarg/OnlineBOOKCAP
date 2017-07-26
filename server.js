@@ -33,6 +33,7 @@ var rulesRoute=require('./server/routes/rulescrud.js');
 var UserRoute=require('./server/routes/userRoute.js');
 var OnlineRoute=require('./server/routes/onlinecrud.js');
 var doctorhomeRoute=require('./server/routes/doctorhomecrud.js');
+var bookappointmentRoute=require('./server/routes/bookappointmentcrud.js');
 
 
 
@@ -90,6 +91,7 @@ app.use('/rules',rulesRoute);
 app.use('/api', UserRoute);
 app.use('/online', OnlineRoute);
 app.use('/doctorhome',doctorhomeRoute);
+app.use('/bookappointment',bookappointmentRoute);
 
 
 
