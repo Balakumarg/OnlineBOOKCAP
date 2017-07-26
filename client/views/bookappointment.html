@@ -26,7 +26,10 @@
           <div class="col-xs-4">
             <md-input-container>
               <label>First Name  </label>
-              <input  type="text" name="patname" id="patname" ng-model ="patient.firstName" ng-pattern="/^(\D)+$/" ng-required="true">
+              <input  type="text" name="patname" id="patname" ng-model ="bookappointment.firstName" ng-pattern="/^(\D)+$/" ng-required="true">
+
+              <!-- <input type="text" name="id" id="id" ng-readonly="showid" value={{patient.id}}> -->
+
               <div ng-messages="patientForm.patname.$error">
                 <div ng-message="required">Patient Name is required.</div>
                 <div ng-message="pattern">Please Enter letters only.</div>
@@ -39,7 +42,7 @@
             <div class="col-xs-4">
               <md-input-container>
                 <label>Last Name </label>
-                <input  type="text" name="patname" id="patname" ng-model ="patient.lastName" ng-pattern="/^(\D)+$/" ng-required="true">
+                <input  type="text" name="patname" id="patname" ng-model ="bookappointment.lastName" ng-pattern="/^(\D)+$/" ng-required="true">
                 <div ng-messages="patientForm.patname.$error">
                   <div ng-message="required">Patient Name is required.</div>
                   <div ng-message="pattern">Please Enter letters only.</div>
@@ -53,7 +56,7 @@
           <div class="col-xs-4">
            <md-input-container>
               <label>Service </label>
-             <md-select name="service" id="service" placeholder="Type Of Service"  ng-model="patient.service" ng-required="true">
+             <md-select name="service" id="service" placeholder="Type Of Service"  ng-model="bookappointment.service" ng-required="true">
                <md-option ng-repeat="o in service" ng-value="o">{{o}}</md-option>
              </md-select>
              <div ng-messages="patientForm.service.$error">
@@ -69,7 +72,7 @@
             <div class="col-xs-4">
               <md-input-container>
                 <label class="id">Appointment Date</label>
-                <input name="appdate" ng-model ="patient.appointdate" datepicker-config="datepickerConfig"   ng-required="true" ng-flat-datepicker>
+                <input name="appdate" ng-model ="bookappointment.appointdate" datepicker-config="datepickerConfig"   ng-required="true" ng-flat-datepicker>
                 <div ng-messages="patientForm.appdate.$error">
                   <div ng-message="required">Appointment Date is required.</div>
                 </div>
@@ -79,7 +82,7 @@
             <div class="col-xs-4">
                  <md-input-container>
                     <label>Appointment Time</label>
-                   <md-select name="apptime"  placeholder="Appointment Time" ng-model="patient.appointtime" ng-required="true">
+                   <md-select name="apptime"  placeholder="Appointment Time" ng-model="bookappointment.appointtime" ng-required="true">
                      <md-option ng-repeat="i in appointtime" ng-value="i">{{i}}</md-option>
                    </md-select>
                    <div ng-messages="patientForm.apptime.$error">
@@ -90,7 +93,7 @@
        <div class="col-xs-4">
             <md-input-container>
                <label>Gender </label>
-              <md-select name="gender" id="gender" placeholder="Gender" ng-change="genId()" ng-model="patient.gender" ng-required="true">
+              <md-select name="gender" id="gender" placeholder="Gender" ng-change="genId()" ng-model="bookappointment.gender" ng-required="true">
                 <md-option ng-repeat="o in gender" ng-value="o">{{o}}</md-option>
               </md-select>
               <div ng-messages="patientForm.gender.$error">
@@ -111,7 +114,7 @@
           <div class="col-xs-5">
    <md-input-container>
    <label> Reason to visit</label>
-   <textarea name="Reason" rows="6" cols="55" ng-model="patient.Reason" required></textarea><br><br>
+   <textarea name="Reason" rows="6" cols="55" ng-model="bookappointment.Reason" required></textarea><br><br>
       <div ng-messages="patientForm.Reason.$error">
        <div ng-message="required">Enter a Reason.</div>
      </div>
@@ -120,8 +123,8 @@
         </div></div>
 
 
-        <md-button type="button" ng-click="resetpatient(patient)">RESET</md-button>
-        <md-button class="md-primary" ng-disabled="patientForm.$invalid" ng-click="addappoint()">SUBMIT</md-button>
+        <!-- <md-button type="button" ng-click="resetpatient(patient)">RESET</md-button> -->
+        <md-button class="md-primary" ng-disabled="patientForm.$invalid" ng-click="addbookappointment()">SUBMIT</md-button>
       </form>
 
 
