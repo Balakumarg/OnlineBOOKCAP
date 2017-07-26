@@ -224,6 +224,9 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/doctoraddpatient', {
         templateUrl: 'views/doctoraddpatient.html',
         controller:'PatientController'
+    }).when('/bookappointment', {
+        templateUrl: 'views/bookappointment.html',
+        controller:'bookappointmentController'
     });
 
 
