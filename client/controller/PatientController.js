@@ -206,6 +206,11 @@ $rootScope.petientDetails=response;
 
 
 
+// go to payment page
+$scope.gotopayment = function(){
+$location.path('/payment')
+};
+
 
 
 
