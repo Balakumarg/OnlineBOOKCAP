@@ -3,9 +3,11 @@ angular.module('tatluApp').controller('bookappointmentController', function($sco
 
 var authUser = $cookies.getObject('authUser');
 
-var loggedInUser = authUser.currentUser.userInfo.fname;
+var Userfname = authUser.currentUser.userInfo.fname;
+var UserID = authUser.currentUser.userInfo.Id;
 
-$scope.fname = loggedInUser;
+$scope.fname = Userfname;
+$scope.Id = UserID;
 
 
 
