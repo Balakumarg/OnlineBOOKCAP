@@ -172,7 +172,7 @@ app.config(function($routeProvider, $locationProvider) {
             controller: 'UserManagementViewController'
     }).when('/bookappointment', {
         templateUrl: 'views/bookappointment.html',
-        controller:'PatientController'
+        controller:'bookappointmentController'
     }).when('/vitalscheck', {
         templateUrl: 'views/vitalscheck.html',
         controller:'PatientController'
