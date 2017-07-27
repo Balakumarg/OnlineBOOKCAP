@@ -63,10 +63,10 @@
 
             <div class="col-xs-4">
               <md-input-container>
-                <label class="id">Heart Beat Rate/bpm</label>
-                <input name="heartrate" ng-model ="patient.heartrate">
-                <div ng-messages="patientForm.heartrate.$error">
-                  <div ng-message="required">Heart Rate is required.</div>
+                <label class="id">Pulse/min</label>
+                <input name="pulse" ng-model ="patient.pulse">
+                <div ng-messages="patientForm.pulse.$error">
+                  <div ng-message="required">Pulse is required.</div>
                 </div>
               </md-input-container>
             </div>
@@ -122,10 +122,9 @@
                 </div>
               </md-input-container>
             </div>
+        </div>
 
-
-
-        </div></div>
+      </div>
 
 
         <md-button type="button" ng-click="resetpatient(patient)">RESET</md-button>
