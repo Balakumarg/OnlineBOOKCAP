@@ -127,7 +127,7 @@ $scope.addreminder = function(){
 // $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
 // console.log(response);
 // // alert("Registration completed!!!!");
-//
+//'/doctorvisitsummery',
 //   //  refreshglobals();
 // });
 };
