@@ -56,8 +56,11 @@
 
 
 
-   
-             
+
+                <li>
+                                    <a class="account_btn" href="javascript:;" data-toggle="dropdown"> <i class="fa fa-cog"></i> </a>
+                </li>
+
              </ul>
 
           </header>
@@ -80,7 +83,7 @@
 						<li><a data-placement="bottom" title="Go to Inbox" href="mail-inbox.html"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 						<li><a data-placement="bottom" title="Go to Profile" href="#/profile"><i class="fa fa-user" aria-hidden="true"></i></a></li>
 						<li><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
-						<li><a data-placement="bottom" title="logout" ng-click="LogOut()"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+						<li><a data-placement="bottom" value="click to toggle fullscreen" onclick="toggleFullScreen(document.body)" title="Fullscreen"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
 				<div class="quick-stats">
@@ -96,9 +99,9 @@
                <ul class="nav">
 
                                    <li class="menu-accordion" ng-repeat="m in menuList | orderBy:'sl_no'" ng-click="showChilds(m)">
-                                      <a class="active "href={{m.href}}> <i class={{m.icon}} aria-hidden="true"></i><span>{{m.menuName}}</span> </a>
+                                      <a class={{m.class}} href={{m.href}}> <i class={{m.icon}} aria-hidden="true"></i><span>{{m.menuName}}</span> </a>
                                       <ul class="sub-menu">
-                                         <li ng-repeat="sm in m.subMenu" ng-show="m.active" ><a href={{sm.href}}>{{sm.name}}</a></li>
+                                         <li ng-repeat="sm in m.subMenu" ng-show="m.active" ><a class={{sm.class}} href={{sm.href}}>{{sm.name}}</a></li>
                                       </ul>
                                    </li>
                </ul>
