@@ -184,7 +184,7 @@ app.config(function($routeProvider, $locationProvider) {
         controller:'appointmentController'
     }).when('/todayappointment', {
         templateUrl: 'views/doctortodayappointment.html',
-        controller:'doctorController'
+        controller:'bookappointmentController'
     }).when('/doctoradddescription', {
         templateUrl: 'views/doctordescription.html',
           controller:'doctorController'
@@ -208,6 +208,9 @@ app.config(function($routeProvider, $locationProvider) {
           controller:'doctorController'
     }).when('/doctoraddreminder', {
         templateUrl: 'views/doctoraddreminder.html',
+          controller:'doctorController'
+    }).when('/doctorvisitsummery', {
+        templateUrl: 'views/doctorvisitsummery.html',
           controller:'doctorController'
     }).when('/doctorreferdoctor', {
         templateUrl: 'views/doctorreferdoctor.html',
@@ -318,7 +321,8 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                          '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                          '/userView_call_center','/userView_facility_admin','/userView_front_desk'];
-  var doctorpages = ['/','/nav','/doctoraddreminder','/doctoradddiagnosis','/doctoraddpatienttype','/doctorschedule','/doctoradddescription',
+  var doctorpages = ['/','/nav','/doctorvisitsummery','/doctoraddreminder','/doctoradddiagnosis','/doctoraddpatienttype',
+                     '/doctorschedule','/doctoradddescription',
   '/vitalscheck','/doctorrefertest','/doctorreferdoctor','/doctoraddpatient','/doctormypatients',
 '/doctorcheckvitals','/todayappointment', '/doctorhome','/visit','/profile','/changepassword','/doctoraddgoal',
 '/doctoraddprocedure','/doctorpayment','/doctoraddmedication','/allpatients'];
