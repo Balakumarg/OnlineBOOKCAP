@@ -184,7 +184,7 @@ app.config(function($routeProvider, $locationProvider) {
         controller:'appointmentController'
     }).when('/todayappointment', {
         templateUrl: 'views/doctortodayappointment.html',
-        controller:'bookappointmentController'
+        controller:'doctorController'
     }).when('/doctoradddescription', {
         templateUrl: 'views/doctordescription.html',
           controller:'doctorController'
