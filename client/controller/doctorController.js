@@ -59,6 +59,14 @@ angular.module('tatluApp').controller('doctorController', function($scope,$http,
   //  $scope.doctor.type1  = function(){
   //       return false;
   //   };
+    var refreshbookapt = function () {
+        $http.get('/bookappointment/bookappointment').success(function (response) {
+            $scope.apptlist = response;
+              $scope.bookappointment ={};
+        });
+    };
+    refreshbookapt();
+  
   $scope.appointment = function(){
     $location.path('/doctoradddescription');
   // $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
