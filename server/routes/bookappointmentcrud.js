@@ -8,7 +8,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 var BookapptSchema = mongoose.Schema({
 
      firstName:String,
-     lastName:String,
+     patientid:String,
      service:String,
      appointdate:String,
      appointtime:String,
@@ -47,7 +47,7 @@ router.post('/bookappointment', function(req, res){
 
 
     var Firstname = req.body.firstName;
-    var Lastname = req.body.lastName;
+    var Patientid = req.body.patientid;
     var Service = req.body.service;
     var Aptdate = req.body.appointdate;
     var Apttime = req.body.appointtime;
@@ -62,7 +62,7 @@ router.post('/bookappointment', function(req, res){
    var book1 = new Bookapptment({
 
      firstName:Firstname,
-     lastName:Lastname,
+     patientid:Patientid,
      service:Service,
      appointdate:Aptdate,
      appointtime:Apttime,
