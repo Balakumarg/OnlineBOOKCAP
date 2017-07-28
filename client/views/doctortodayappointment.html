@@ -41,7 +41,7 @@
                              <div class="body">
                              <div class="table-responsive-m">
                                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                     <thead>
+                                   <thead>
                                          <tr>
                                              <th>S No</th>
                                              <th>Patient ID</th>
@@ -49,17 +49,19 @@
                                              <th>Appointment Date</th>
                                              <th>Appointment Time</th>
                                              <th>Reason To Visit</th>
+                                             <th>Status</th>
                                              <th>Action</th>
                                          </tr>
                                      </thead>
                                      <tbody>
                                          <tr ng-repeat="d in apptlist">
-                                             <td>{{index+1}}</td>
+                                             <td>{{$index+1}}</td>
                                              <td>{{d.patientid}}</td>
                                              <td>{{d.firstName}}</td>
                                              <td>{{d.appointdate}}</td>
                                              <td>{{d.appointtime}}</td>
                                              <td>{{d.reason}}</td>
+                                              <td>{{d.status}}</td>
                                              <td><button type="button" ng-click="appointment()">Add</button></td>
                                          </tr>
 
