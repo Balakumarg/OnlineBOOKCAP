@@ -34,6 +34,7 @@ var UserRoute=require('./server/routes/userRoute.js');
 var OnlineRoute=require('./server/routes/onlinecrud.js');
 var doctorhomeRoute=require('./server/routes/doctorhomecrud.js');
 var bookappointmentRoute=require('./server/routes/bookappointmentcrud.js');
+var recordsRoute=require('./server/routes/recordscrud.js');
 
 
 
@@ -52,6 +53,8 @@ var storage = multer.diskStorage({
 
 
 
+
+
 var upload = multer({ storage: storage })
 
 app.post('/savedata', upload.single('file'), function(req,res,next){
@@ -60,6 +63,36 @@ console.log('checkingg',req.file.filename);
 
 
 });
+
+
+
+// ************************************** records*******************************************************************
+
+
+var records = multer.diskStorage({
+  destination: './client/records/',
+  filename: function (req, file,cb) {
+    cb(null,file.originalname)
+  }
+})
+
+
+var upload1 = multer({ storage: records })
+
+app.post('/savedata1', upload1.single('file'), function(req,res,next){
+    console.log('Uploaded Successful ', req.file, req.body);
+console.log('checkingg',req.file.filename);
+
+
+});
+
+
+
+
+
+
+
+// *****************************************************************************************************************
 
 
 
@@ -92,6 +125,7 @@ app.use('/api', UserRoute);
 app.use('/online', OnlineRoute);
 app.use('/doctorhome',doctorhomeRoute);
 app.use('/bookappointment',bookappointmentRoute);
+app.use('/records',recordsRoute);
 
 
 
