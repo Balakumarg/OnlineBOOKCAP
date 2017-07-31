@@ -1,4 +1,4 @@
-angular.module('tatluApp').controller('PaymentController', function($scope, $http) {
+angular.module('tatluApp').controller('paymentController', function($scope, $http) {
 
   $scope.RefreshPayment = function () {
         $http.get('/payment/payment').success(function (response) {
