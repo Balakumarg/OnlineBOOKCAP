@@ -19,14 +19,16 @@
   <div class="row">
        <div class="col-sm-4 col-xs-4">
 <label>Upload Documents</label>
-<input type="file" ng-model="record.uploaddocuments">
+
+<input type="file" name="recordfilename" id="recordfilename"  ng-model ="records.recordfile" file-model ="recordfile"  accept=".jpg,.jpeg,.png">
+
 </div>
      <div class="col-sm-4 col-xs-4">
 <label>Description</label>
-<input type="text" ng-model="record.description">
+<input type="text" ng-model="records.description">
 </div>
      <div class="col-sm-4 col-xs-4">
-<button type="button" ng-click="">Upload</button>
+<button type="button" ng-click="addrecords()">Upload</button>
 </div>
 </div>
 </div>
@@ -48,19 +50,21 @@
     <thead>
       <tr>
             <th>S.No</th>
-            <th>Records</th>
-        <th>Description</th>
-
-        <th>Action</th>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Description</th>
+            <th>File</th>
 
       </tr>
     </thead>
-    <tbody  ng-repeat="m in recordList |filter:serchingId">
+    <tbody  ng-repeat="m in recordsList">
       <tr>
-        <td>{{m.id}}</td>
-        <td>{{m.uploaddocuments}}</td>
+        <td>{{$index+1}}</td>
+        <td>{{m.patientid}}</td>
+        <td>{{m.patient_name}}</td>
         <td>{{m.description}}</td>
-        <td><button type="button" ng-click="">Download</button></td>
+        <td>{{m.recordfilename}}</td>
+        <!-- <td><button type="button" ng-click=>Download</button></td> -->
 
 
 
