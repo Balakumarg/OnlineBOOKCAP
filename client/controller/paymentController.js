@@ -23,6 +23,39 @@ angular.module('tatluApp').controller('paymentController', function($scope, $htt
          };
 
 $scope.addPayment=function(){
+  
+  
+  
+    $scope.payment.patientid=UserID;
+  $scope.payment.firstName=Userfname;
+// --------------------for total---------------------------
+
+// $scope.parseFloat = function(value)
+//     {
+//         return parseFloat(value);
+//     }
+
+
+$scope.payment.total=(scope.payment.doctor_fess + $scope.payment.lab_fess + $scope.payment.medicine_cost )
+
+
+
+
+
+
+
+
+
+// -------------------------------------------------------
+
+
+  
+  
+  
+  
+  
+  
+  
 $http.post('/payment/payment', $scope.payment).success(function (response) {
 console.log(response);
 
