@@ -211,6 +211,12 @@ $scope.gotopayment = function(){
 $location.path('/payment')
 };
 
+  
+  // go to payment page
+$scope.gotobookappointment = function(){
+$location.path('/bookappointment')
+};
+
 
 
 
