@@ -3,60 +3,51 @@
 .card {
     background-color: #fff;
 }
-
+.head{
+  margin-left: 35%;
+}
+b {
+  color:#09b9ac;
+}
+td {
+    color:#09b9ac;
+}
 </style>
 
 <br>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-repeat="d in [visitlist[visitlist.length-1]] track by $index">
+<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-repeat="d in visitlist"> -->
   <md-content layout-padding>
    <div class="card">
        <div class="header">
-           <h3>Visit Summery</h3>
+           <h3>Visit Summary</h3>
+    </div>
+       <div class="head">
+         <label>Doctor Name : </label> <b>Dr.{{fname}}</b>
        </div>
+
        <hr>
-       <div class="header">
-           <h4>Add Chief complaint description, Add Consultant brief description, Add Issues/Allergy.</h4>
-       </div>
-<hr>
+
        <div class="body">
-
-
-
-
-<form name="doctorForm" class="container-fluid" ng-submit="submit()">
+         <!-- <div class="row">
+           <div class="col-xs-4">
+             <label>Doctor Name : </label> <b>Dr.{{fname}}</b>
+           </div>
+         </div> -->
         <div class="row">
           <div class="col-xs-4">
-   <md-input-container>
-   <label>Chief Complaint Description</label>
-   <textarea name="chief" rows="6" cols="55" ng-model="doctor.chiefcomplaintdes"></textarea><br><br>
-      <div ng-messages="doctorForm.chief.$error">
-       <div ng-message="required">Enter a Reason.</div>
-     </div>
-   </md-input-container>
+   <label>Chief Complaint Description : </label> <b>{{d.chiefcomplaintdes}}</b>
  </div>
 
           <div class="col-xs-4">
-           <md-input-container>
-              <label>Visit Category </label>
-             <md-select name="visitcate" id="visitcate" placeholder="Visit Category" ng-model="doctor.visitcategory" ng-required="true">
-               <md-option ng-repeat="o in visitcategory" ng-value="o">{{o}}</md-option>
-             </md-select>
-             <div ng-messages="doctorForm.visitcate.$error">
-               <div ng-message="required">Visit Category is required.</div>
-             </div>
-           </md-input-container>
+
+              <label>Visit Category :  </label> <b>{{d.visitcategory}}</b>
+
          </div>
          <div class="col-xs-4">
-          <md-input-container>
-             <label>Sensitivity </label>
-            <md-select name="sensitivity" id="sensitivity" placeholder="Sensitivity " ng-model="doctor.sensitivity" ng-required="true">
-              <md-option ng-repeat="o in sensitivity" ng-value="o">{{o}}</md-option>
-            </md-select>
-            <div ng-messages="doctorForm.visitcate.$error">
-              <div ng-message="required">Sensitivity is required.</div>
-            </div>
-          </md-input-container>
+
+             <label>Sensitivity : </label> <b>{{d.sensitivity}}</b>
+
         </div>
 
         </div>
@@ -64,182 +55,267 @@
           <div class="row">
 
             <div class="col-xs-4">
-     <md-input-container>
-     <label>Consulation Brief Description</label>
-     <textarea name="brief" rows="6" cols="55" ng-model="doctor.consulationbriefdes"></textarea><br><br>
-        <div ng-messages="doctorForm.brief.$error">
-         <div ng-message="required">Enter a Reason.</div>
-       </div>
-     </md-input-container>
-   </div>
-   <div class="col-xs-4">
-<md-input-container>
-<label>Issues (Injuries/Medical/Allergy) </label>
-<textarea name="issues" rows="6" cols="55" ng-model="doctor.issues"></textarea><br><br>
-<div ng-messages="doctorForm.issues.$error">
-<div ng-message="required">Enter a Reason.</div>
-</div>
-</md-input-container>
-</div>
 
+      <label>Consulation Brief Description : </label> <b>{{d.consulationbriefdes}}</b>
+
+      </div>
+        </div>
+
+     <hr>
+
+  <label>Issues (Injuries/Medical/Allergy)</label>
+<hr>
+      <div class="row">
+
+        <div class="col-xs-4">
+
+        <label>Type : </label> <b>{{d.type}}</b>
 
         </div>
-            </form>
-    </div>
 
-    <div class="header">
-        <h4>Complaints/Symptoms/Signs</h4>
-    </div>
-    <hr>
-    <div class="body">
+      <div class="col-xs-4" ng-if="d.type == 'Problem'">
+
+      <label>Type of Problem : </label> <b>{{d.typeproblem}}</b>
+
+      </div>
+      <div class="col-xs-4" ng-if="d.type == 'Allergy'">
+
+      <label>Type of Allergy : </label> <b>{{d.typeallergy}}</b>
+
+      </div>
+      <div class="col-xs-4" ng-if="d.type == 'Medication'">
+
+      <label>Type of Medication : </label> <b>{{d.typemedication}}</b>
+
+      </div>
+      <div class="col-xs-4" ng-if="d.type == 'Surgery'">
+
+      <label>Type of Surgery : </label> <b>{{d.typesurgery}}</b>
+
+      </div>
+      </div>
       <div class="row">
-      <div class="col-xs-6">
-   <md-input-container>
-   <label>Complaints/Symptoms/Signs </label>
-   <textarea name="complaints" rows="6" cols="55" ng-model="doctor.complaints"></textarea><br><br>
-   <div ng-messages="doctorForm.complaints.$error">
-   <div ng-message="required">Enter a Complaints.</div>
+           <div class="col-xs-4">
+
+               <label>Title : </label> <b>{{d.title}}</b>
+
+           </div>
+           <div class="col-xs-4">
+
+               <label class="id">Active Issue Codes : </label> <b>{{d.activeissue}}</b>
+
+           </div>
+           <div class="col-xs-4">
+
+               <label class="id">Coding : </label> <b>{{d.coding}}</b>
+
+           </div>
+      </div>
+      <div class="row">
+                       <div class="col-xs-4">
+
+                           <label class="id">Begin Date : </label> <b>{{d.begindate}}</b>
+
+                       </div>
+
+
+
+
+           <div class="col-xs-4">
+
+               <label class="id">End Date : </label> <b>{{d.enddate}}</b>
+
+           </div>
+
+           <div class="col-xs-4">
+
+               <label class="id">Occurance : </label> <b>{{d.occurance}}</b>
+
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-xs-4" ng-if="d.type == 'Allergy'">
+
+               <label class="id">Severity : </label> <b>{{d.severity}}</b>
+
+           </div>
+
+           <div class="col-xs-4" ng-if="d.type == 'Allergy'">
+
+               <label class="id">Reaction : </label> <b>{{d.reaction}}</b>
+
+           </div>
+
+           <div class="col-xs-4">
+
+               <label class="id">Reffered By : </label> <b>{{d.refferedby}}</b>
+
+           </div>
+
+           <div class="col-xs-4">
+
+               <label class="id">Outcome : </label> <b>{{d.outcome}}</b>
+
+           </div>
+
+
+
+           <div class="col-xs-4">
+
+               <label class="id">Description : </label> <b>{{d.description}}</b>
+
+           </div>
+
+
+
+      </div>
+
+
+
+
+
+
+   <hr>
+      <div class="row">
+      <div class="col-xs-4">
+
+   <label>Complaints/Symptoms/Signs : </label> <b>{{d.complaints}}</b>
+
    </div>
-   </md-input-container>
+   <div class="col-xs-4">
+
+   <label>Probable Diagnosis : </label> <b>{{d.diagnosis}}</b>
+
+
    </div>
+   <div class="col-xs-4">
+
+   <label> Treatment : </label> <b>{{d.treatment}}</b>
+
+   </div>
+       </div>
+       <hr>
+
+
+       <div class="row">
+       <div class="col-xs-4">
+         <label>Ordering Provider : </label> <b>Dr.{{fname}}</b>
+       </div>
+
+       <div class="col-xs-4">
+
+           <label>Sending To : </label> <b>{{d.proceduresendingto}}</b>
+       </div>
+       <div class="col-xs-4">
+
+         <label>Order Date : </label> <b>{{d.procedureorderdate}}</b>
+
+       </div>
+
+       </div>
+
+       <div class="row">
+
+       <div class="col-xs-4">
+
+          <label>Priority : </label> <b>{{d.procedurepriority}}</b>
+
+       </div>
+       <div class="col-xs-4">
+
+         <label>Procedure : </label> <b>{{d.procedure}}</b>
+
+       </div>
        </div>
 
 
-</div>
-<hr>
-<div class="header">
- <h4>Probable Diagnosis</h4>
-</div>
-<hr>
-<div class="body">
-<div class="row">
-<div class="col-xs-6">
-<md-input-container>
-<label>Probable Diagnosis </label>
-<textarea name="diagnosis" rows="6" cols="55" ng-model="doctor.diagnosis"></textarea><br><br>
-<div ng-messages="doctorForm.diagnosis.$error">
-<div ng-message="required">Enter a Probable Diagnosis.</div>
-</div>
-</md-input-container>
-</div>
-</div>
+       <hr>
+
+       <div class="table-responsive-m">
+         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+              <thead>
+                 <tr>
+                      <th>S No</th>
+                      <th>Medicine Name</th>
+                      <th>Morning</th>
+                      <th>Afternoon</th>
+                      <th>Evening</th>
+                      <th>Night</th>
+                      <th>Duration</th>
+                      <th>Medication Instruction</th>
+
+                  </tr>
+              </thead>
+              <tbody>
+                    <tr>
+                      <td>{{$index+1}}</td>
+                      <td>{{d.medicinename}}</td>
+                      <td>{{d.medicationfrequencymrn}}</td>
+                      <td>{{d.medicationfrequencyaftn}}</td>
+                      <td>{{d.medicationfrequencyeve}}</td>
+                      <td>{{d.medicationfrequencynit}}</td>
+                      <td>{{d.medicationduration}}</td>
+                       <td>{{d.medicationinstruction}}</td>
+
+                         </tr>
 
 
-</div>
-<hr>
-<div class="header">
- <h4>Treatment</h4>
-</div>
-<hr>
-<div class="body">
-<div class="row">
-<div class="col-xs-6">
-<md-input-container>
-<label> Treatment</label>
-<textarea name="treatment" rows="6" cols="55" ng-model="doctor.treatment"></textarea><br><br>
-<div ng-messages="doctorForm.treatment.$error">
-<div ng-message="required">Enter a Treatment.</div>
-</div>
-</md-input-container>
-</div>
-</div>
+                     </tbody>
+                 </table>
+       </div>
 
-</div>
-
-<div class="header">
-    <h4>Add Instruction & Health Goal</h4>
-</div>
-<hr>
-<div class="body">
+        <hr>
   <div class="row">
-  <div class="col-xs-6">
-<md-input-container>
-<label>Instruction </label>
-<textarea name="instruction" rows="6" cols="55" ng-model="doctor.instruction"></textarea><br><br>
-<div ng-messages="doctorForm.instruction.$error">
-<div ng-message="required">Enter a Instruction.</div>
+  <div class="col-xs-4">
+
+<label>Instruction : </label> <b>{{d.instruction}}</b>
+
 </div>
-</md-input-container>
+<div class="col-xs-4">
+
+<label>Health Goal : </label> <b>{{d.goal}}</b>
+
 </div>
    </div>
-<div class="row">
-<div class="col-xs-6">
-<md-input-container>
-<label>Health Goal </label>
-<textarea name="goal" rows="6" cols="55" ng-model="doctor.goal"></textarea><br><br>
-<div ng-messages="doctorForm.goal.$error">
-<div ng-message="required">Enter a Reason.</div>
-</div>
-</md-input-container>
-</div>
-</div>
 
-</div>
-
-<div class="header">
-    <h4>Reminders/Follow-up</h4>
-</div>
-<hr>
-<div class="body">
   <div class="row">
-  <div class="col-xs-6">
-<md-input-container>
-<labeL>Type of Procedure</label>
-<textarea name="instruction" rows="6" cols="55" ng-model="doctor.instruction"></textarea><br><br>
-<div ng-messages="doctorForm.instruction.$error">
-<div ng-message="required">Enter a Instruction.</div>
+  <div class="col-xs-4">
+
+<labeL>Type of Procedure : </label> <b>{{d.typeproinstruction}}</b>
+
 </div>
-</md-input-container>
+<div class="col-xs-4">
+
+    <label>Follow-up Date :  </label> <b>{{d.profollouupdate}}</b>
+
+
 </div>
    </div>
-<div class="row">
- <div class="col-xs-4">
-   <md-input-container>
-     <label class="id">Follow-up Date </label>
-     <input name="follouupdate" ng-model ="doctor.follouupdate" datepicker-config="datepickerConfig"   ng-readonly ng-flat-datepicker>
-     <div ng-messages="doctorForm.follouupdate.$error">
-       <div ng-message="required">Follow-up Date is required.</div>
-     </div>
-   </md-input-container>
- </div>
-</div>
-</div>
-<div class="header">
-<h4>Doctor Visit Follow-up</h4>
-</div>
-<hr>
-<div class="body">
+
+
+
 <div class="row">
 <div class="col-xs-4">
-<md-input-container>
- <label class="id">Doctor Visit Follow-up Date </label>
- <input name="follouupdate" ng-model ="doctor.follouupdate" datepicker-config="datepickerConfig" ng-flat-datepicker>
- <div ng-messages="doctorForm.follouupdate.$error">
-   <div ng-message="required">Doctor Visit Follow-up Date is required.</div>
- </div>
-</md-input-container>
+
+ <label>Doctor Visit Follow-up Date : </label> <b>{{d.docvisitfollouupdate}}</b>
+
+</div>
+<div class="col-xs-4">
+
+    <label>Provided Education : </label> <b>{{d.providededucation}}</b>
+
+
 </div>
 </div>
 
-<div class="row">
-   <div class="col-xs-6">
-
-       <label>Provided Education : </label> &nbsp;&nbsp;
-       <input type="radio" name="pro" value="1" ng-model="doctor.type1"> Yes &nbsp;&nbsp;
-       <input type="radio" name="pro" value="2" ng-model="doctor.type2"> No &nbsp;&nbsp;
-
-
-  </div>
-</div>
-
-
-</div>
 
 <br>
+<div class="row" style="margin-left: 65%;">
+  <md-button class="md-primary" ng-click="closevisit()">Close</md-button>
+      </div>
 
-<md-button class="md-primary" ><a href="#/todayappointment">Close</a></md-button>
 
-
+</div>
     </div>
     </div>
         </md-content>
