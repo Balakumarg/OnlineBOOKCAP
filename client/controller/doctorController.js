@@ -1,6 +1,12 @@
 angular.module('tatluApp').controller('doctorController', function($scope,$http,$location,$cookies,AuthenticationService,$location) {
 
+  var authUser = $cookies.getObject('authUser');
 
+  var Userfname = authUser.currentUser.userInfo.fname;
+  var UserID = authUser.currentUser.userInfo.Id;
+
+  $scope.fname = Userfname;
+  $scope.Id = UserID;
 
 
   $scope.dataSourcedoc1 =  { "chart": { "caption": "Clinical Revenue", "captionFontBold": "0", "captionFontSize": "20", "xAxisName": "Month",
@@ -43,9 +49,14 @@ angular.module('tatluApp').controller('doctorController', function($scope,$http,
 
 
   $scope.datepickerConfig = {
-           allowFuture: false,
+           allowFuture: true,
            dateFormat: 'DD/MM/YYYY'
        };
+
+$scope.visitcategory = ['New Patient', 'Established Patient'];
+$scope.sensitivity = ['High','Normal','None'];
+$scope.procedurepriority = ['Unassigned','High','Normal'];
+   $scope.type = ['Problem', 'Allergy','Medication','Surgery','Dental'];
   $scope.typeproblem = ['Asthma', 'BCC', 'Dermatochalasis', 'Diabetes','Dry eye', 'HTN','Hyperlipidemia', 'IDDM w/ BDR','Keratoconus', 'NIDDM w/ BDR','NS Cataract', 'POAG','SCC', 'Stye','Complete blood count', 'LIPID','KIDNEY FUNCTION', 'liver function','electrolytes', 'pancreatic enzymes',
   'cardiac panel', 'thyroid function','tumor marker', 'vitamins','iron profile', 'urine complete analysis'];
   $scope.typeallergy = ['Codeine', 'iodine','penicillic','sulfa'];
@@ -55,111 +66,204 @@ angular.module('tatluApp').controller('doctorController', function($scope,$http,
    $scope.outcome = ['Unassignes', 'Resolved','Improved','Status quo','Worse','Pending followup'];
    $scope.severity = ['Unassigned','Mild','Mild to Moderate','Moderate','Moderate to Severe','Severe','Life Threatening Severity', 'Fatal'];
    $scope.reaction = ['Unassignes','Hives','Nausea','Shortness of Breath'];
+   $scope.duration = ['1 Day', '2 Days','3 Days','4 Days','5 Days','6 Days','Week','Month','Year'];
 
-  //  $scope.doctor.type1  = function(){
-  //       return false;
-  //   };
-    var refreshbookapt = function () {
+  $scope.providededucation = false;
+
+  $scope.medicationfrequency = ['Morning','Afternoon','Evening','Night'];
+   $scope.selected = [1];
+   $scope.toggle = function (item, list) {
+     var idx = list.indexOf(item);
+     if (idx > -1) {
+       list.splice(idx, 1);
+     }
+     else {
+       list.push(item);
+     }
+   };
+
+   $scope.exists = function (item, list) {
+     return list.indexOf(item) > -1;
+   };
+
+   $scope.isIndeterminate = function() {
+     return ($scope.selected.length !== 0 &&
+         $scope.selected.length !== $scope.medicationfrequency.length);
+   };
+
+   $scope.isChecked = function() {
+     return $scope.selected.length === $scope.medicationfrequency.length;
+   };
+
+   $scope.toggleAll = function() {
+     if ($scope.selected.length === $scope.medicationfrequency.length) {
+       $scope.selected = [];
+     } else if ($scope.selected.length === 0 || $scope.selected.length > 0) {
+       $scope.selected = $scope.medicationfrequency.slice(0);
+     }
+   };
+
+  var refreshbookapt = function () {
         $http.get('/bookappointment/bookappointment').success(function (response) {
             $scope.apptlist = response;
+
+
               $scope.bookappointment ={};
         });
     };
     refreshbookapt();
-  
-  $scope.appointment = function(){
-    $location.path('/doctoradddescription');
-  // $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
-  // console.log(response);
-  // // alert("Registration completed!!!!");
-  //
-  //   //  refreshglobals();
-  // });
-};
-  $scope.addDescription = function(){
-      $location.path('/doctoraddpatienttype');
-  // $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
-  // console.log(response);
-  // // alert("Registration completed!!!!");
-  //
-  //   //  refreshglobals();
-  // });
-};
-$scope.addPatienttype = function(){
-    $location.path('/doctoradddiagnosis');
-// $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
-// console.log(response);
-// // alert("Registration completed!!!!");
+
+    var refreshvisitsummary = function () {
+
+            $http.get('/doctorhome/doctorhome').success(function (response) {
+              $scope.visitlist = response;
+    console.log(response);
+          });
+      };
+      refreshvisitsummary();
+//   $scope.appointment = function(d){
+//     console.log(d);
+//     $scope.doctor = d;
+//      console.log($scope.doctor);
+//       var objid = d._id;
+//     var patiid =d.patientid;
+//     var patiname =d.firstName;
+//     var patiappd =d.appointdate;
+//     var patiappt =d.appointtime;
+//     var patirea =d.reason;
+//     var patista =d.status;
 //
-//   //  refreshglobals();
-// });
-};
-$scope.adddiagnosis = function(){
-    $location.path('/doctoraddprocedure');
-// $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
-// console.log(response);
-// // alert("Registration completed!!!!");
+//  $scope.doctor._id = objid;
+// $scope.doctor.patid =patiid;
+// $scope.doctor.patname =patiname;
+// $scope.doctor.patappdate =patiappd;
+// $scope.doctor.patapptime =patiappt;
+// $scope.doctor.patreason =patirea;
+// $scope.doctor.patstatus =patista;
+// console.log($scope.doctor.patid);
 //
-//   //  refreshglobals();
-// });
-};
-$scope.addprocedure = function(){
-    $location.path('/doctoraddmedication');
-// $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
+// $http.put('/doctorhome/doctorhome/' + objid, $scope.doctor).success(function (response) {
 // console.log(response);
-// // alert("Registration completed!!!!");
+// //alert("Registration completed!!!");
 //
-//   //  refreshglobals();
+//       $location.path('/doctorprescription');
+//
+//
 // });
+//
+// };
+
+           $scope.IsVisible = false;
+           $scope.ShowHide = function () {
+               //If DIV is visible it will be hidden and vice versa.
+               $scope.IsVisible = $scope.IsVisible ? false : true;
+           }
+
+
+// $scope.openissue = false;
+// $scope.open = function(){
+// $scope.openissue = true;
+//
+//
+// };
+// $scope.close = function(){
+// $scope.openissue = false;
+//
+//
+// };
+$scope.closevisit = function(){
+  $location.path('/todayappointment');
+
 };
-$scope.addmedication = function(){
-    $location.path('/doctoraddgoal');
-// $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
-// console.log(response);
-// // alert("Registration completed!!!!");
-//
-//   //  refreshglobals();
-// });
-};
-$scope.addgoal = function(){
-    $location.path('/doctoraddreminder');
-// $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
-// console.log(response);
-// // alert("Registration completed!!!!");
-//
-//   //  refreshglobals();
-// });
+$scope.appointment = function(d){
+  $location.path('/doctorprescription');
+
 };
 $scope.addreminder = function(){
-    $location.path('/doctorvisitsummery');
+
+    $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
+    console.log(response);
+    alert("Registration completed!!!");
+           $location.path('/doctorvisitsummery');
+
+    });
+};
+
+  $scope.addDescription = function(){
+      $location.path('/doctoraddpatienttype');
+
+};
+
+$scope.addPatienttype = function(){
+
+    $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
+    console.log(response);
+      $location.path('/doctorprescription');
+    //   $scope.docpatlist = response;
+    // alert("Registration completed!!!");
+    //   $location.path('/doctoradddiagnosis');
+
+    });
+};
+// $scope.adddiagnosis = function(){
+//
+//     $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
+//     console.log(response);
+//     alert("Registration completed!!!");
+//         $location.path('/doctoraddprocedure');
+//
+//     });
+// };
+// $scope.addprocedure = function(){
+//
+//     $scope.doctor.procedureorder=Userfname;
+//
+//  console.log( $scope.doctor.procedureorder);
+//  $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
+//  console.log(response);
+//  alert("Registration completed!!!");
+//       $location.path('/doctoraddmedication');
+//
+//  });
+// };
+// $scope.addmedication = function(){
+//
+//    $scope.doctor.medicationorder=Userfname;
+//
+// console.log( $scope.doctor.medicationorder);
 // $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
 // console.log(response);
-// // alert("Registration completed!!!!");
-//'/doctorvisitsummery',
-//   //  refreshglobals();
+// alert("Registration completed!!!");
+//     $location.path('/doctoraddgoal');
+//
 // });
-};
-$scope.datepickerConfig = {
-         allowFuture: false,
-         dateFormat: 'DD/MM/YYYY'
-     };
-     $scope.gender = ['Male', 'Female'];
-     $scope.service = ['Dental Checkup', 'Full Body Checkup','ENT Checkup','Heart Checkup'];
+//
+// };
+// $scope.addgoal = function(){
+//
+//     $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
+//     console.log(response);
+//     alert("Registration completed!!!");
+//             $location.path('/doctoraddreminder');
+//
+//     });
+// };
 
-  var refreshrules = function () {
+
+  var refreshdochme = function () {
         $http.get('/doctorhome/doctorhome').success(function (response) {
-            $scope.ruleslist = response;
-              $scope.rules ="";
+            $scope.doclist = response;
+              $scope.doctor ="";
         });
     };
-    refreshrules();
+    refreshdochme();
 
 
-    $scope.addrules = function(){
+    $scope.adddoclist = function(){
     $http.post('/doctorhome/doctorhome', $scope.doctor).success(function (response) {
     console.log(response);
     alert("Registration completed!!!!");
-        refreshrules();
+        refreshdochme();
     });
   };
 
