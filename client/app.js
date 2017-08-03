@@ -1,4 +1,4 @@
-var app = angular.module('tatluApp', ['ngRoute','ui.calendar','ui.bootstrap','mwl.calendar','ngAnimate',"ng-fusioncharts", 'ngAria','ngMessages','ngMaterial','ngFlatDatepicker','ngCookies', 'ngStorage']);
+var app = angular.module('tatluApp', ['ngRoute','ui.bootstrap','ui.calendar','mwl.calendar','ngAnimate',"ng-fusioncharts", 'ngAria','ngMessages','ngMaterial','ngFlatDatepicker','ngCookies', 'ngStorage']);
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
