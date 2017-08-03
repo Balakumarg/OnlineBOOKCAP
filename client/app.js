@@ -179,6 +179,9 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/doctorhome', {
         templateUrl: 'views/doctorhome.html',
         controller:'doctorController'
+    }).when('/doctorprescription', {
+        templateUrl: 'views/doctorprescription.html',
+        controller:'doctorController'
     }).when('/doctorschedule', {
         templateUrl: 'views/doctorschedule.html',
         controller:'appointmentController'
@@ -321,7 +324,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                          '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                          '/userView_call_center','/userView_facility_admin','/userView_front_desk'];
-  var doctorpages = ['/','/nav','/doctorvisitsummery','/doctoraddreminder','/doctoradddiagnosis','/doctoraddpatienttype',
+  var doctorpages = ['/','/nav','/doctorprescription','/doctorvisitsummery','/doctoraddreminder','/doctoradddiagnosis','/doctoraddpatienttype',
                      '/doctorschedule','/doctoradddescription',
   '/vitalscheck','/doctorrefertest','/doctorreferdoctor','/doctoraddpatient','/doctormypatients',
 '/doctorcheckvitals','/todayappointment', '/doctorhome','/visit','/profile','/changepassword','/doctoraddgoal',
