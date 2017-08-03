@@ -1,4 +1,4 @@
-          var express =require('express');
+var express =require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 var bodyParser=require('body-parser');
@@ -7,18 +7,66 @@ router.use(bodyParser.urlencoded({extended:true}));
 
 var doctorhomeSchema = mongoose.Schema({
 
+// _id:String,
+
+  patid:String,
+patname:String,
+patappdate:String,
+patapptime:String,
+patreason:String,
+  patstatus:String,
+chiefcomplaintdes:String,
+visitcategory:String,
+sensitivity:String,
+consulationbriefdes:String,
+type:String,
+typeproblem:String,
+typeallergy:String,
+typemedication:String,
+typesurgery:String,
+title:String,
+activeissue:String,
+coding:String,
+begindate: String,
+enddate:String,
+occurance:String,
+severity:String,
+reaction:String,
+refferedby:String,
+outcome:String,
+description:String,
+complaints:String,
+diagnosis:String,
+treatment:String,
+procedureorder:String,
+proceduresendingto:String,
+procedureorderdate:String,
+procedurepriority: String,
+procedure:String,
+medicationsendingto:String,
+medicationorderdate:String,
+medicinename:String,
+medicationfrequencymrn:String,
+medicationfrequencyaftn:String,
+medicationfrequencyeve:String,
+medicationfrequencynit:String,
+medicationduration:String,
+medicationinstruction:String,
+medicationsignature:String,
+instruction:String,
+goal:String,
+typeproinstruction:String,
+profollouupdate:String,
+docvisitfollouupdate:String,
+providededucation: String
 
 
 
-      pwarning: String,
-       pwarningdate: String,
-       pwarningpast: String,
-        pwarningpastdate: String,
 
 
     });
 
-var dochme = mongoose.model( 'dochme',doctorhomeSchema, 'doctorhme_collection');
+var dochme = mongoose.model( 'dochme',doctorhomeSchema, 'prescription_collection');
 
 
 router.get('/doctorhome', function (req, res,next) {
@@ -43,35 +91,120 @@ router.post('/doctorhome', function(req, res){
   console.log(req.body);
 
 
+// var Id = req.body._id;
+  var Patid = req.body.patid;
+    var Patname = req.body.patname;
+    var Patappdate = req.body.patappdate;
+    var Patapptime = req.body.patapptime;
+    var Patreason = req.body.patreason;
+      var Patstatus = req.body.patstatus;
 
-  var Title = req.body.title;
-    var Aalert = req.body.activealert;
-    var Palert = req.body.passivealert;
-    var Premain = req.body.patientremainder;
-    var Cwarn = req.body.cwarning;
-    var Cwdate = req.body.cwarningdate;
-    var Cwarnpast = req.body.cwarningpast;
-    var Cwpastdate = req.body.cwarningpastdate;
-    var Pwarn = req.body.pwarning;
-    var Pwarndate = req.body.pwarningdate;
-    var Pwarnpast = req.body.pwarningpast;
-    var Pwarnpastdate = req.body.pwarningpastdate;
+  var Chiefcomplaintdes = req.body.chiefcomplaintdes;
+    var Visitcategory = req.body.visitcategory;
+    var Sensitivity = req.body.sensitivity;
+    var Consulationbriefdes = req.body.consulationbriefdes;
+    var Type = req.body.type;
+    var Typeproblem = req.body.typeproblem;
+    var Typeallergy = req.body.typeallergy;
+    var Typemedication = req.body.typemedication;
+    var Typesurgery = req.body.typesurgery;
+    var Title = req.body.title;
+    var Activeissue = req.body.activeissue;
+      var Coding = req.body.coding;
+        var Begindate = req.body.begindate;
+        var Enddate = req.body.enddate;
+        var Occurance = req.body.occurance;
+        var Severity = req.body.severity;
+        var Reaction = req.body.reaction;
+        var Refferedby = req.body.refferedby;
+        var Outcome = req.body.outcome;
+        var Description = req.body.description;
+        var Complaints = req.body.complaints;
+        var Diagnosis = req.body.diagnosis;
+        var Treatment = req.body.treatment;
+          var Procedureorder = req.body.procedureorder;
+            var Proceduresendingto = req.body.proceduresendingto;
+            var Procedureorderdate = req.body.procedureorderdate;
+            var Procedurepriority = req.body.procedurepriority;
+            var Procedure = req.body.procedure;
+            var Medicationorder = req.body.medicationorder;
+            var Medicationsendingto = req.body.medicationsendingto;
+            var Medicationorderdate = req.body.medicationorderdate;
+            var Medicinename = req.body.medicinename;
+            var Medicationfrequencymrn = req.body.medicationfrequencymrn;
+            var Medicationfrequencyaftn = req.body.medicationfrequencyaftn;
+            var Medicationfrequencyeve = req.body.medicationfrequencyeve;
+            var Medicationfrequencynit = req.body.medicationfrequencynit;
+
+            var Medicationduration = req.body.medicationduration;
+            var Medicationinstruction = req.body.medicationinstruction;
+            var Medicationsignature = req.body.medicationsignature;
+            var Goal = req.body.goal;
+            var Typeproinstruction = req.body.typeproinstruction;
+            var Profollouupdate = req.body.profollouupdate;
+            var Docvisitfollouupdate = req.body.docvisitfollouupdate;
+            var Providededucation = req.body.providededucation;
+            var Instruction = req.body.instruction;
 
 
 
-   var rules = new dochme({
+
+   var doctor1 = new dochme({
+// _id:Id,
+     patid:Patid,
+     patname:Patname,
+     patappdate:Patappdate,
+     patapptime:Patapptime,
+     patreason:Patreason,
+     patstatus:Patstatus,
+
+
+     chiefcomplaintdes:Chiefcomplaintdes,
+     visitcategory:Visitcategory,
+     sensitivity:Sensitivity,
+     consulationbriefdes:Consulationbriefdes,
+     type:Type,
+     typeproblem:Typeproblem,
+     typeallergy:Typeallergy,
+     typemedication:Typemedication,
+     typesurgery:Typesurgery,
      title:Title,
-     activealert:Aalert,
-     passivealert:Palert,
-     patientremainder:Premain,
-     cwarning:Cwarn,
-     cwarningdate:Cwdate,
-     cwarningpast:Cwarnpast,
-     cwarningpastdate:Cwpastdate,
-     pwarning:Pwarn,
-     pwarningdate:Pwarndate,
-     pwarningpast:Pwarnpast,
-     pwarningpastdate:Pwarnpastdate
+     activeissue:Activeissue,
+     coding:Coding,
+     begindate:Begindate,
+     enddate:Enddate,
+     occurance:Occurance,
+     severity:Severity,
+     reaction:Reaction,
+     refferedby:Refferedby,
+     outcome:Outcome,
+     description:Description,
+     complaints:Complaints,
+     diagnosis:Diagnosis,
+     treatment:Treatment,
+     procedureorder:Procedureorder,
+     proceduresendingto:Proceduresendingto,
+     procedureorderdate:Procedureorderdate,
+     procedurepriority:Procedurepriority,
+     procedure:Procedure,
+     medicationorder:Medicationorder,
+     medicationsendingto:Medicationsendingto,
+     medicationorderdate:Medicationorderdate,
+     medicinename:Medicinename,
+     medicationfrequencymrn:Medicationfrequencymrn,
+    medicationfrequencyaftn:Medicationfrequencyaftn,
+    medicationfrequencyeve:Medicationfrequencyeve,
+    medicationfrequencynit:Medicationfrequencynit,
+       medicationduration:Medicationduration,
+     medicationinstruction:Medicationinstruction,
+     medicationsignature:Medicationsignature,
+     instruction:Instruction,
+     goal:Goal,
+     typeproinstruction:Typeproinstruction,
+     profollouupdate:Profollouupdate,
+     docvisitfollouupdate:Docvisitfollouupdate,
+     providededucation:Providededucation
+
 
 
   });
@@ -84,7 +217,7 @@ router.post('/doctorhome', function(req, res){
 
 
 
-  rules.save(function(error, docs){
+  doctor1.save(function(error, docs){
     if ( error ) throw error;
     console.log("Type Saved Successfully");
     res.json(docs);
