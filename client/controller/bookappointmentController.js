@@ -33,6 +33,11 @@ var UserID = authUser.currentUser.userInfo.Id;
 
 $scope.fname = Userfname;
 $scope.Id = UserID;
+  
+  $scope.datepickerConfig = {
+         allowFuture: false,
+         dateFormat: 'DD/MM/YYYY'
+     };
 
 
 
