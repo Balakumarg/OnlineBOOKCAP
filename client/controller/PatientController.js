@@ -207,13 +207,12 @@ $rootScope.petientDetails=response;
 
 
 // go to payment page
-$scope.gotopayment = function(){
-$location.path('/payment')
+$scope.gotoremainder = function(){
+$location.path('/remainder')
 };
 
-  
-  // go to payment page
-$scope.gotobookappointment = function(){
+
+$scope.gotoappointment = function(){
 $location.path('/bookappointment')
 };
 
