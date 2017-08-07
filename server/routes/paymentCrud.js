@@ -8,6 +8,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 var PaymentSchema = mongoose.Schema({
     patientid:String,
     patient_name:String,
+    doctor_name:String,
     date_of_service:String,
     date_of_billing:String,
     visit_id:String,
@@ -56,6 +57,7 @@ router.post('/payment', function(req, res){
 
     var pid = req.body.patientid;
     var did = req.body.patient_name;
+      var doc_name = req.body.doctor_name;
     var dos = req.body.date_of_service;
     var do_bill = req.body.date_of_billing;
     var v_id = req.body.visit_id;
@@ -76,6 +78,7 @@ router.post('/payment', function(req, res){
    var payment1 = new Payment({
      patientid:pid,
      patient_name:did,
+       doctor_name:doc_name,
      date_of_service:dos,
      date_of_billing:do_bill,
      visit_id:v_id,
