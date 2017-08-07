@@ -60,6 +60,35 @@ $scope.refreshpat=function(){
 
 $scope.refreshpat();
 
+var refreshbookapt = function () {
+      $http.get('/bookappointment/bookappointment').success(function (response) {
+          $scope.apptlist = response;
+
+
+            $scope.bookappointment ={};
+      });
+  };
+  refreshbookapt();
+
+    $scope.checkin = function(d){
+      console.log(d);
+      $scope.bookappointment = d;
+       console.log($scope.bookappointment);
+        var objid = d._id;
+        // var patista =d.status;
+   //
+  //  $scope.bookappointment._id = objid;
+
+$scope.bookappointment.status ="Arrived";
+  console.log(objid);
+
+  $http.put('/bookappointment/bookappointment/' + objid,$scope.bookappointment).success(function (response) {
+  console.log(response);
+  //alert("Registration completed!!!");
+
+  });
+
+  };
 
 
   var authUser = $cookies.getObject('authUser');
