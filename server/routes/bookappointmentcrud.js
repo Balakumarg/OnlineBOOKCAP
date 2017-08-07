@@ -14,7 +14,7 @@ var BookapptSchema = mongoose.Schema({
      appointtime:String,
      gender:String,
      reason:String,
-
+        status:String,
 
     });
 
@@ -53,7 +53,7 @@ router.post('/bookappointment', function(req, res){
     var Apttime = req.body.appointtime;
     var Gender = req.body.gender;
       var Reason = req.body.reason;
-
+  var Status = req.body.status;
 
 
 
@@ -68,6 +68,7 @@ router.post('/bookappointment', function(req, res){
      appointtime:Apttime,
      gender: Gender,
      reason:Reason,
+         status:Status,
 
   });
 
