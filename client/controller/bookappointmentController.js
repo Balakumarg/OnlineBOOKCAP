@@ -77,7 +77,7 @@ var refreshbookapt = function () {
 
       $scope.bookappointment.firstName=Userfname;
       $scope.bookappointment.patientid=UserID;
-
+   $scope.bookappointment.status="Not Arrived";
   $http.post('/bookappointment/bookappointment', $scope.bookappointment).success(function (response) {
   console.log(response);
   alert("Registration completed!!!");
