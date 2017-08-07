@@ -1,4 +1,4 @@
-angular.module('tatluApp').controller('HomeController', function($scope, $http, $rootScope, $location,$filter) {
+angular.module('tatluApp').controller('HomeController', function($scope, $http, $rootScope, $location,$filter,AuthenticationService) {
 
   var refreshDoctor = function () {
         $http.get('/doctor/doctor').success(function (response) {
@@ -8,6 +8,18 @@ angular.module('tatluApp').controller('HomeController', function($scope, $http, 
     };
 
     refreshDoctor();
+  
+  
+  
+  
+//logout coding//
+    $scope.LogOut = function() {
+        AuthenticationService.Logout(function(response) {
+                $location.path('/sign-in');
+
+        });
+    };
+
 
     var refreshfacility = function () {
           $http.get('/facility/facility').success(function (response) {
