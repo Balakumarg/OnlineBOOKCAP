@@ -1,4 +1,20 @@
-angular.module('tatluApp').controller('paymentController', function($scope, $http) {
+angular.module('tatluApp').controller('paymentController', function($scope, $http,$rootScope, $cookies) {
+
+
+
+
+  var authUser = $cookies.getObject('authUser');
+
+  var Userfname = authUser.currentUser.userInfo.fname;
+  var UserID = authUser.currentUser.userInfo.Id;
+
+  $scope.fname = Userfname;
+  $scope.Id = UserID;
+
+
+
+
+
 
   $scope.RefreshPayment = function () {
         $http.get('/payment/payment').success(function (response) {
@@ -18,16 +34,30 @@ angular.module('tatluApp').controller('paymentController', function($scope, $htt
 
 
     $scope.datepickerConfig = {
-             allowFuture: false,
+
              dateFormat: 'DD/MM/YYYY'
          };
 
+
+
+
+
 $scope.addPayment=function(){
-  
-  
-  
+
+  // var authUser = $cookies.getObject('authUser');
+  //
+  // var Userfname = authUser.currentUser.userInfo.fname;
+  // var UserID = authUser.currentUser.userInfo.Id;
+  //
+  // $scope.fname = Userfname;
+  // $scope.Id = UserID;
+
+
+
     $scope.payment.patientid=UserID;
-  $scope.payment.firstName=Userfname;
+  $scope.payment.patient_name=Userfname;
+
+
 // --------------------for total---------------------------
 
 // $scope.parseFloat = function(value)
@@ -36,8 +66,8 @@ $scope.addPayment=function(){
 //     }
 
 
-$scope.payment.total=(scope.payment.doctor_fess + $scope.payment.lab_fess + $scope.payment.medicine_cost )
 
+//$scope.payment.total={scope.payment.doctor_fess + $scope.payment.lab_fess + $scope.payment.medicine_cost }
 
 
 
@@ -49,14 +79,14 @@ $scope.payment.total=(scope.payment.doctor_fess + $scope.payment.lab_fess + $sco
 // -------------------------------------------------------
 
 
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
 $http.post('/payment/payment', $scope.payment).success(function (response) {
+
+
 console.log(response);
 
         alert("Payment Saved!!!!");
