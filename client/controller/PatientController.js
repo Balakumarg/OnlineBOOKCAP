@@ -90,7 +90,16 @@ $scope.bookappointment.status ="Arrived";
 
   };
 
+  $scope.addvitals = function(){
+var patid = $scope.patient.id;
+console.log(patid);
 
+      $http.put('/patient/patient/' + patid, $scope.patient).success(function (response) {
+      console.log(response);
+
+      });
+  };
+  
   var authUser = $cookies.getObject('authUser');
   console.log(authUser);
 
