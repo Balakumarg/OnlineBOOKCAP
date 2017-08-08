@@ -268,26 +268,26 @@
                                       <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                           <thead>
                                               <tr>
-                                                    <th>SL.No</th>
-                                                  <th>Bill date</th>
-                                                  <th>Patient</th>
-                                                  <th>Doctor Name</th>
-                                                  <th>Doctor fess</th>
-                                                  <th>Lab fess</th>
-                                                  <th>Medicine fess</th>
-                                                  <th>Total</th>
+                                                         <th>SL.No</th>
+                                                 <th>Bill Date</th>
+                                                 <th>Patient</th>
+                                                 <th>Doctor Name</th>
+                                                 <th>Doctor Fees</th>
+                                                 <th>Lab Fees</th>
+                                                 <th>Medicine Fees</th>
+                                                 <th>Total</th>
                                               </tr>
                                           </thead>
                                           <tbody>
                                               <tr ng-repeat="d in paymentList">
-                                                  <td>{{$index}}</td>
-                                                  <td>{{d.date_of_billing}}</td>
-                                                  <td>{{d.patient_name}}</td>
-                                                    <td>{{d.doctor_name}}</td>
-                                                    <td>{{d.doctor_fess}}</td>
-                                                    <td>{{d.lab_fess}}</td>
-                                                    <td>{{d.medicine_cost}}</td>
-                                                    <td>{{((d.doctor_fess ) -- (d.lab_fess )--(d.medicine_cost ))}}</td>
+                                             <td>{{$index+1}}</td>
+                                               <td>{{d.date_of_billing}}</td>
+                                               <td>{{d.patient_name}}</td>
+                                                 <td>{{d.doctor_name}}</td>
+                                                 <td>{{d.doctor_fess}}</td>
+                                                 <td>{{d.lab_fess}}</td>
+                                                 <td>{{d.medicine_cost}}</td>
+                                                 <td>{{((d.doctor_fess ) -- (d.lab_fess )--(d.medicine_cost ))}}</td>
 
 
 
