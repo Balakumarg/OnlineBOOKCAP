@@ -35,6 +35,9 @@
 					<h3>Tab content 2</h3>
 					<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 				</div>
+				
+				
+				
 
 				<div class="tab_content">
 					<h3>Tab content 3</h3>
@@ -145,7 +148,49 @@
 	       
 	       **********************************************************************************
 	       
+	       *********************************for Query to db************************************
 	       
+router.get('/visit', function (req, res,next) {
+    console.log("REACHED GET FUNCTION ON SERVER");
+
+
+
+    if(req.query.VisitingDocotor){
+        Visit.find({"VisitingDocotor":req.query.VisitingDocotor},function (err, docs) { console.log(docs); res.json(docs); });
+      }
+      else{
+        Visit.find(function (err, docs) { console.log(docs); res.json(docs); });
+      }
+
+
+
+    //
+    // Visit.find({}, function (err, docs) {
+    //      res.json(docs);
+    //     //  console.log(docs);
+    //
+    // });
+});
+	       
+	       
+	       
+	       
+	       
+	         $scope.RefreshVisit = function () {
+        $http.get('/visit/visit',{
+          params:{
+            VisitingDocotor:'raja'
+          }
+        }).success(function (response) {
+            console.log(' READ IS SUCCESSFUL');
+            $scope.visitList = response;
+            $scope.visit = "";
+        });
+    };
+
+   $scope.RefreshVisit();
+	       
+	       ********************************************************************************
 	       
 	       
 	       
