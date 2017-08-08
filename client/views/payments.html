@@ -268,13 +268,11 @@
                                       <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                           <thead>
                                               <tr>
-                                                  <th>SL.No</th>
+                                                    <th>SL.No</th>
                                                   <th>Bill date</th>
                                                   <th>Patient</th>
                                                   <th>Doctor</th>
-                                                  <th>Charges</th>
-                                                  <th>Tax</th>
-                                                  <th>Discount</th>
+
                                                   <th>Total</th>
                                               </tr>
                                           </thead>
@@ -283,6 +281,10 @@
                                                   <td>{{$index}}</td>
                                                   <td>{{d.date_of_billing}}</td>
                                                   <td>{{d.patient_name}}</td>
+                                                    <td>{{d.doctor_name}}</td>
+
+                                                    <td>{{((d.doctor_fess ) -- (d.lab_fess )--(d.medicine_cost ))}}</td>
+
 
 
                                               </tr>
