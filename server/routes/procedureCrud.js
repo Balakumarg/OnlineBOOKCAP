@@ -14,7 +14,7 @@ var procedureSchema = mongoose.Schema({
 
     });
 
-var Procedure = mongoose.model('Procedure', procedureSchema, 'Procedureu_collection');
+var Procedure = mongoose.model('Procedure', procedureSchema, 'Procedure_collection');
 
 
 
