@@ -50,9 +50,18 @@ app.config(function($routeProvider, $locationProvider) {
     }) .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller:'PatientController'
-    }) .when('/nursehome', {
+    }).when('/nursehome', {
         templateUrl: 'views/nursehome.html',
         controller:'PatientController'
+    }).when('/frontdeskhome', {
+        templateUrl: 'views/frontdeskhome.html',
+        controller:'PatientController'
+    }).when('/callcenterhome', {
+        templateUrl: 'views/callcenterhome.html',
+        controller:'PatientController'
+    }).when('/nursepayment', {
+        templateUrl: 'views/nursepayments.html',
+        controller:'paymentController'
     }) .when('/patienthome', {
         templateUrl: 'views/patienthome.html',
         controller:'PatientController'
@@ -329,9 +338,9 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
   '/vitalscheck','/doctorrefertest','/doctorreferdoctor','/doctoraddpatient','/doctormypatients',
 '/doctorcheckvitals','/todayappointment', '/doctorhome','/visit','/profile','/changepassword','/doctoraddgoal',
 '/doctoraddprocedure','/doctorpayment','/doctoraddmedication','/allpatients'];
-  var nursepages=['/','/nav','/visit','/nursehome','/patient_demographics','/patient','/patientvisit','/payment','/appointment','/profile','/changepassword'];
-  var callcenterpages=['/','/nav','/nursehome','/appointment','/allpatients','/profile','/patient','/changepassword'];
-  var frondeskpages=['/','/nav','/appointment','/nursehome','/patient','/allpatients','/profile','/changepassword'];
+  var nursepages=['/','/nav','/visit','/nursepayment','/vitalscheck','/bookappointment','/nursehome','/patient_demographics','/patient','/patientvisit','/payment','/appointment','/profile','/changepassword'];
+  var callcenterpages=['/','/nav','/callcenterhome','/bookappointment','/appointment','/allpatients','/profile','/patient','/changepassword'];
+  var frondeskpages=['/','/nav','/appointment','/frontdeskhome','/patient','/allpatients','/profile','/changepassword'];
   var facilityadminpages=['/','/nav','/userView','/nursehome','/patient','/appointment','/allpatients','/usermanagement','/profile','/changepassword'];
 
 
