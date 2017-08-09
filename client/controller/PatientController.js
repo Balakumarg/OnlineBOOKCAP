@@ -1,4 +1,4 @@
-angular.module('tatluApp').controller('PatientController', function($scope, $http,fileUpload,$location,$rootScope,$cookies) {
+angular.module('tatluApp').controller('PatientController', function($scope,$mdDialog, $http,fileUpload,$location,$rootScope,$cookies) {
   var socket=io();
 
   $scope.dataSourcead1 =  { "chart": { "caption": "New Patient", "captionFontBold": "0", "captionFontSize": "20", "xAxisName": "Month",
@@ -90,16 +90,26 @@ $scope.bookappointment.status ="Arrived";
 
   };
 
-  $scope.addvitals = function(){
+  $scope.addvitals = function(ev){
 var patid = $scope.patient.id;
 console.log(patid);
 
       $http.put('/patient/patient/' + patid, $scope.patient).success(function (response) {
       console.log(response);
+      $mdDialog.show(
+      $mdDialog.alert()
+        .parent(angular.element(document.querySelector('#popupContainer')))
+        .clickOutsideToClose(true)
+        .title('Vitals Added Completed')
+        .textContent('')
+        .ariaLabel('Alert Dialog Demo')
+        .ok('OK')
+        .targetEvent(ev)
 
+    );
       });
   };
-  
+
   var authUser = $cookies.getObject('authUser');
   console.log(authUser);
 

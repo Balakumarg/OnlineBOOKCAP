@@ -30,11 +30,11 @@ $scope.errormessage=$scope.response.message;
           }
           if(response.data.userDetail.UserType=="Callcenter"){
 
-              $location.path('/nursehome');
+              $location.path('/callcenterhome');
           }
           if(response.data.userDetail.UserType=="Frontdesk"){
 
-              $location.path('/nursehome');
+              $location.path('/frontdeskhome');
           }
           if(response.data.userDetail.UserType=="FacilityAdmin"){
 
