@@ -245,6 +245,9 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/bookappointment', {
         templateUrl: 'views/bookappointment.html',
         controller:'bookappointmentController'
+    }).when('/patientlist', {
+        templateUrl: 'views/patientlist.html',
+        controller:'PatientController'
     });
 
 
@@ -334,7 +337,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
            var patientPages = ['/','/appointment','/vitalscheck','/bookappointment','/login','/visithistory','/patienthistory',
                                '/report','/patientappointments','/patienthome','/patient_demographics','/membership','/records',
                                '/reminders','/payment','/medication','/profile','/changepassword','/appointment',
-                               '/admin_procedure_view','/admin_procedure'];
+                               '/admin_procedure_view','/admin_procedure','/patientlist'];
 
   var AdminPages=['/','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit',
                   '/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment',
@@ -343,26 +346,27 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                   '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                   '/userView_call_center','/userView_facility_admin','/userView_front_desk',
-                  '/admin_procedure_view','/admin_procedure'];
+                  '/admin_procedure_view','/admin_procedure','/patientlist'];
         
   var doctorpages = ['/','/nav','/doctorprescription','/doctorvisitsummery','/doctoraddreminder','/doctoradddiagnosis',
                      '/doctoraddpatienttype','/doctorschedule','/doctoradddescription',
                     '/vitalscheck','/doctorrefertest','/doctorreferdoctor','/doctoraddpatient','/doctormypatients',
                     '/doctorcheckvitals','/todayappointment', '/doctorhome','/visit','/profile','/changepassword','/doctoraddgoal',
-                    '/doctoraddprocedure','/doctorpayment','/doctoraddmedication','/allpatients','/admin_procedure_view','/admin_procedure'];
+                    '/doctoraddprocedure','/doctorpayment','/doctoraddmedication','/allpatients','/admin_procedure_view',
+                     '/admin_procedure','/patientlist'];
         
   var nursepages=['/','/nav','/visit','/nursepayment','/vitalscheck','/bookappointment','/nursehome',
                   '/patient_demographics','/patient','/patientvisit','/payment','/appointment',
-                  '/profile','/changepassword','/admin_procedure_view','/admin_procedure'];
+                  '/profile','/changepassword','/admin_procedure_view','/admin_procedure','/patientlist'];
         
   var callcenterpages=['/','/nav','/callcenterhome','/bookappointment','/appointment','/allpatients',
-                       '/profile','/patient','/changepassword'];
+                       '/profile','/patient','/changepassword','/patientlist'];
         
   var frondeskpages=['/','/nav','/appointment','/frontdeskhome','/patient','/allpatients',
-                     '/profile','/changepassword'];
+                     '/profile','/changepassword','/patientlist'];
         
   var facilityadminpages=['/','/nav','/userView','/nursehome','/patient','/appointment','/allpatients','/usermanagement',
-                          '/profile','/changepassword'];
+                          '/profile','/changepassword','/patientlist'];
 
 
         var authUser = $cookies.getObject('authUser');
