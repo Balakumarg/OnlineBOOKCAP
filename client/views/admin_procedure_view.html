@@ -52,6 +52,7 @@
     <table class="table">
         <thead>
           <tr>
+              <th>Sl No</th>
             <th>Procedure ID</th>
             <th>Type Of Procedure</th>
             <th>Sub Type</th>
@@ -65,6 +66,7 @@
         <tbody  ng-repeat="m in procedureList | filter:idSearch  ">
             <!-- <tbody  ng-repeat="m in procedureList | filter:idSearch |filter:typeSearch "> -->
           <tr>
+              <td>{{$index+1}}</td>              
             <td>{{m.id}}</td>
             <td>{{m.type}}</td>
             <td>{{m.subType}}</td>
