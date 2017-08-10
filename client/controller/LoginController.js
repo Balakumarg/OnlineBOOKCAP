@@ -38,7 +38,7 @@ $scope.errormessage=$scope.response.message;
           }
           if(response.data.userDetail.UserType=="FacilityAdmin"){
 
-              $location.path('/nursehome');
+              $location.path('/dashboard');
           }
 
         }
