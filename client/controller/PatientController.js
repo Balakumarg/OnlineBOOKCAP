@@ -214,10 +214,10 @@ $scope.genId=function(){
   }
 
 
-  $scope.patient.id=id;
+  $scope.patient.id=id.toUpperCase();
 
 }
-
+ 
 
 $scope.addpatient=function(){
       if($scope.patient.Password===$scope.patient.cPassword){

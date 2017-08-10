@@ -187,7 +187,7 @@ $scope.resetfacility();
           }
 
 
-          $scope.doctor.id=id;
+          $scope.doctor.id=id.toUpperCase();
 
         }
 
@@ -250,7 +250,7 @@ alert("Your password is not matching...Try again");
         }
 
 
-        $scope.nurse.id=id;
+        $scope.nurse.id=id.toUpperCase();
 
       }
 
@@ -298,7 +298,7 @@ $scope.callId=function(){
   }
 
 
-  $scope.call.id=id;
+  $scope.call.id=id.toUpperCase();
 
 }
 
@@ -345,7 +345,7 @@ $scope.frontId=function(){
   }
 
 
-  $scope.front.id=id;
+  $scope.front.id=id.toUpperCase();
 
 }
 
@@ -392,7 +392,7 @@ $scope.facId=function(){
   }
 
 
-  $scope.facilityAdm.id=id;
+  $scope.facilityAdm.id=id.toUpperCase();
 
 }
 
