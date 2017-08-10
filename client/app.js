@@ -254,6 +254,9 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/admin_payments_view', {
         templateUrl: 'views/admin_payments_view.html',
         controller:'adminpaymentController'
+    }).when('/facilityformmanagement', {
+        templateUrl: 'views/facilityformmanagement.html',
+        controller: 'formManagementController'
     });
 
 
@@ -352,7 +355,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                   '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                   '/userView_call_center','/userView_facility_admin','/userView_front_desk',
-                  '/admin_procedure_view','/admin_procedure','/patientlist','/admin_payment','/admin_payments_view'];
+                  '/admin_procedure_view','/admin_procedure','/patientlist','/admin_payment','/admin_payments_view','/facilityformmanagement'];
 
   var doctorpages = ['/','/nav','/doctorprescription','/doctorvisitsummery','/doctoraddreminder','/doctoradddiagnosis',
                      '/doctoraddpatienttype','/doctorschedule','/doctoradddescription',
@@ -377,7 +380,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                   '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                   '/userView_call_center','/userView_facility_admin','/userView_front_desk',
-                  '/admin_procedure_view','/admin_procedure','/patientlist','/admin_payment','/admin_payments_view'];
+                  '/admin_procedure_view','/admin_procedure','/patientlist','/admin_payment','/admin_payments_view','/facilityformmanagement'];
 
 
         var authUser = $cookies.getObject('authUser');
