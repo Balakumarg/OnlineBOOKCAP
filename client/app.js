@@ -363,13 +363,13 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
         
   var nursepages=['/','/nav','/visit','/nursepayment','/vitalscheck','/bookappointment','/nursehome',
                   '/patient_demographics','/patient','/patientvisit','/payment','/appointment',
-                  '/profile','/changepassword','/admin_procedure_view','/admin_procedure','/patientlist'];
-        
+                  '/profile','/changepassword','/admin_procedure_view','/admin_procedure'];
+
   var callcenterpages=['/','/nav','/callcenterhome','/bookappointment','/appointment','/allpatients',
-                       '/profile','/patient','/changepassword','/patientlist'];
-        
-  var frondeskpages=['/','/nav','/appointment','/frontdeskhome','/patient','/allpatients',
-                     '/profile','/changepassword','/patientlist'];
+                       '/profile','/patient','/changepassword'];
+
+  var frondeskpages=['/','/nav','/appointment','/bookappointment','/nursepayment','/frontdeskhome','/patient','/allpatients',
+                     '/profile','/changepassword'];
         
   var facilityadminpages=['/','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit',
                   '/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment',
