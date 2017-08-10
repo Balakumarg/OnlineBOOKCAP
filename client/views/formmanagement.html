@@ -15,7 +15,7 @@
        <div class="body">
 
 
-
+<!--
     <div class="row">
 
 
@@ -34,36 +34,45 @@
        <div class="col-sm-2 col-xs-2">
     <button type="button" ng-click="">Search</button>
     </div>
-    </div>
+    </div> -->
+
+
+
+
     </div>
        <div class="body">
 
 
-<h3>Edit Form Appointment</h3>
+<!-- <h3>Edit Form Appointment</h3> -->
+
+
 <br>
 <div class="col-sm-3 col-xs-3">
 
 <md-select ng-model= "fmanagement" >
 <md-option value="" disabled selected>Select User</md-option>
-  <md-option>Facility Admin</md-option>
+  <md-option ng-repeat="o in admin" ng-value="o">{{o}}</md-option>
+  <!-- <md-option>Facility Admin</md-option>
   <md-option>Doctor</md-option>
 
   <md-option>Nurse</md-option>
 
   <md-option>Call Center</md-option>
 
-  <md-option>Front Desk</md-option>
+  <md-option>Front Desk</md-option> -->
 
 </md-select>
 </div>
-<div ng-switch on="fmanagement">
+
+
+<div  ng-switch on="fmanagement">
 <div ng-switch-when = "Facility Admin">
 
 
 <div>
   <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
 
-    <caption>Facility Admin Access</td>
+    <caption>Facility Admin Access</caption>
     <thead>
       <tr>
         <th>Form name</th>
@@ -80,26 +89,29 @@
         <td>Doctor Management</td>
 
         <td><input type="checkbox"  ng-model="f.doctorRegAdd" >
-</td>
-<td><input type="checkbox"  ng-model="f.doctorRegView" >
-</td>
-        <td><input type="checkbox"  ng-model="f.doctorRegEdit">
-</td>
-        <td><input type="checkbox"  ng-model="f.doctorRegDel">
-</td>
+        </td>
 
+        <td><input type="checkbox"  ng-model="f.doctorRegView" >
+        </td>
+
+        <td><input type="checkbox"  ng-model="f.doctorRegEdit">
+        </td>
+
+        <td><input type="checkbox"  ng-model="f.doctorRegDel">
+        </td>
 
       </tr>
+
       <tr>
         <td>Nurse Management</td>
         <td><input type="checkbox" ng-model="nuraddi">
-</td>
-<td><input type="checkbox" ng-model="nurview">
-</td>
+        </td>
+        <td><input type="checkbox" ng-model="nurview">
+        </td>
         <td><input type="checkbox" ng-model="nurediti">
-</td>
+        </td>
         <td><input type="checkbox" ng-model="nurdeletei">
-</td>
+        </td>
 
 
       </tr>
@@ -118,13 +130,15 @@
 
 
 <div  ng-switch-when = "Doctor">
-  <h3>Search Doctor</h3>
 
-Search:<input type="text" ng-model="docName" placeholder="Id or name or hospital">
+  <h4 class="col-sm-12 col-xs-3">Search Doctor</h4>
+
+<!-- <label class="col-sm-12 col-xs-3">Search:</label> -->
+<input class="col-sm-3 col-xs-4" type="text" ng-model="docName" placeholder="Id or name or hospital">
 
 <div>
   <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-
+<caption>Facility Admin Access</caption>
     <thead>
       <tr>
         <th>Id</th>
