@@ -1,4 +1,11 @@
 angular.module('tatluApp').controller('formManagementController', function($scope, $http) {
+  
+  
+  
+  
+    $scope.admin = ['Facility Admin', 'Doctor','Nurse','Call Center','Front Desk'];
+  $scope.facilityadmin = ['Doctor','Nurse','Front Desk'];
+  
 
   var refreshfac = function () {
         $http.get('/facilityadm/facilityadm').success(function (response) {
