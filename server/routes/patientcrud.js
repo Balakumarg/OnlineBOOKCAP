@@ -7,6 +7,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 
 var PatientSchema = mongoose.Schema({
         id:String,
+        docid:String,
       membershipid:String,
       membershipType:String,
      firstName:String,
@@ -20,6 +21,7 @@ var PatientSchema = mongoose.Schema({
      mobile:String,
      description:String,
      coverPic:String,
+
   address:String
 
 
@@ -53,6 +55,7 @@ router.post('/patient', function(req, res){
 
 
   var Id = req.body.id;
+  var Docid = req.body.docid;
     var Patientname = req.body.firstName;
     var lastnme = req.body.lastName;
 
@@ -73,6 +76,7 @@ router.post('/patient', function(req, res){
 
    var patient1 = new Patient({
      id:Id,
+     docid:Docid,
      membershipType:mtype,
      membershipid:mid,
      firstName:Patientname,
