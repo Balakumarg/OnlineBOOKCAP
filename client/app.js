@@ -258,7 +258,7 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl: 'views/facilityformmanagement.html',
         controller: 'formManagementController'
     }).when('/medication_view', {
-        templateUrl: 'views/medication.html',
+        templateUrl: 'views/medication_view.html',
         controller:'medicationController'
     });
 
