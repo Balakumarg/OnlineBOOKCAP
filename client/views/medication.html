@@ -10,10 +10,12 @@
   <md-content layout-padding>
    <div class="card">
        <div class="header">
-           <h2>Medication</h2>
+           <h2>Add Medication</h2>
        </div>
        <hr>
        <div class="body">
+           <button type="button" style="margin-left: 80%;"><a href="#/medication_view">View Medication</a></button>
+
 
 
  <form ng-submit="addMedication()">
@@ -95,73 +97,6 @@
                   </form>
 
 <!-- ***************************************************************************************************************************** -->
-
-                  <hr>
-
-                    <div >
-
-
-
-                  <div class="col-xs-4">
-                             <md-input-container>
-                               <label>Search </label>
-                               <input type="text" name="subtype"  ng-model="idSearch" required  ng-click=genId()>
-
-                             </md-input-container>
-                           </div>
-
-
-
-                  <table class="table">
-                      <thead>
-                        <tr>
-                          <th>S.No</th>
-                          <th>Generic Name</th>
-                          <th>Manufacturer name</th>
-                          <th>Manufacturer Id</th>
-                          <th>Strength</th>
-                          <!-- <th>Drug</th> -->
-                          <th>Drug Id</th>
-                          <th>Additional Info</th>
-                          <!-- <th>Action</th> -->
-
-
-
-
-                        </tr>
-                      </thead>
-                      <tbody  ng-repeat="m in mediList | filter:idSearch ">
-                        <tr>
-                          <td>{{$index + 1}}</td>
-                          <td>{{m.Generic}}</td>
-                          <td>{{m.Manufacturar}}</td>
-                          <td>{{m.ManufacturerId}}</td>
-                          <td>{{m.Strength}}</td>
-                          <!-- <td>{{m.Drug}}</td> -->
-                            <td>{{m.DrugId}}</td>
-                           <td>{{m.Info}}</td>
-
-<!--
-                <td><button type="button" ng-click="editMedication(m)">Edit</button>
-                <button type="button" ng-click="removeMedication(m)">Delete</button>
-                </td> -->
-
-                        </tr>
-                      </tbody>
-                    </table>
-
-                      </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
