@@ -257,6 +257,9 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/facilityformmanagement', {
         templateUrl: 'views/facilityformmanagement.html',
         controller: 'formManagementController'
+    }).when('/medication_view', {
+        templateUrl: 'views/medication.html',
+        controller:'medicationController'
     });
 
 
@@ -346,7 +349,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
            var patientPages = ['/','/appointment','/vitalscheck','/bookappointment','/login','/visithistory','/patienthistory',
                                '/report','/patientappointments','/patienthome','/patient_demographics','/membership','/records',
                                '/reminders','/payment','/medication','/profile','/changepassword','/appointment',
-                               '/admin_procedure_view','/admin_procedure'];
+                               '/admin_procedure_view','/admin_procedure','/medication_view'];
 
   var AdminPages=['/','/nav','/referrals','/patienttrackingboard','/adminreminder','/filebackup','/useractivities','/userView','/visit',
                   '/dashboard','/patient','/payment','/allpatients','/membership','/allpatients','/membershipplan','/membershipPayment',
@@ -380,7 +383,7 @@ app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
                  '/usermanagement_call_center','/usermanagement_doctor','/usermanagement_facility_admin',
                   '/usermanagement_front_desk','/usermanagement_nurse','/userView_doctor','/userView_nurse',
                   '/userView_call_center','/userView_facility_admin','/userView_front_desk',
-                  '/admin_procedure_view','/admin_procedure','/patientlist','/admin_payment','/admin_payments_view','/facilityformmanagement'];
+                  '/admin_procedure_view','/admin_procedure','/patientlist','/admin_payment','/admin_payments_view','/facilityformmanagement','/medication_view'];
 
 
         var authUser = $cookies.getObject('authUser');
