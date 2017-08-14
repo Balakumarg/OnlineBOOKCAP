@@ -127,7 +127,7 @@
          jQuery('.searchform').insertBefore('.menu-right');
       }
    }
-})(jQuery);
+});
 
                       // Dropdowns Script
 						$(document).ready(function() {
