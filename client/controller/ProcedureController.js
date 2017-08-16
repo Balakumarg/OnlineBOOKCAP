@@ -36,7 +36,7 @@ angular.module('tatluApp').controller('ProcedureController', function($scope, $h
        }
 
 
-       $scope.pro.id=id;
+       $scope.pro.id=id.toUpperCase();
 
      };
 
@@ -54,6 +54,39 @@ location.reload(true);
       		//	$scope.RefreshProcedure();
       	});
       }
+
+
+//Update procedure
+
+      $scope.updatepro=false;
+
+      $scope.editProcedure = function(m) {
+          $http.get('/prcd/prcd/' + m._id).success(function(response) {
+              $scope.pro = response[0];
+              $scope.updatepro=true;
+
+          });
+      };
+
+      $scope.updateProcedure= function() {
+          console.log($scope.pro._id);
+          $http.put('/prcd/prcd/' + $scope.pro._id, $scope.pro).success(function(response) {
+              console.log(response);
+              $scope.updatepro=false;
+              $scope.RefreshProcedure();
+
+          })
+      }
+
+//REmove procedure
+$scope.removeProcedure = function(m) {
+    //console.log(id);
+    $http.delete('/prcd/prcd/' + m._id).success(function(response) {
+        console.log(response);
+        $scope.RefreshProcedure();
+    });
+};
+
 
 
 
